@@ -1,0 +1,113 @@
+<%
+	page[:title] = "PA表"
+#	page[:meta_viewport] = "width=device-width"		#スマホに対応
+	page[:meta_viewport] = ""	#スマホ非対応
+	if page.has_key?(:pareq)	# page[:pareq]が設定されてない場合はなにも表示しない
+%>
+
+<h3>PA表</h3>
+<h4>村セットリスト(弾き語り)</h4>
+
+<div id="pa_wrap">
+	<h5>名前</h5>
+	<p><%= page[:pareq][:name] %></p>
+	<form name="edit" id="edit" method="post" action="pa-lighting.rb">
+		<% if page[:pareq_available][:members] %>
+			<h5>メンバー</h5>
+			<table>
+				<thead>
+					<tr>
+						<th>村民名</th>
+						<th>使用楽器</th>
+						<th>備考</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% page[:pareq][:members].each.with_index { |data, index|	%>
+						<tr>
+								<td>
+									<%= '<input type="text" class="input_members" value="' if page[:pareq_edit] %><%= data[:name] %><%= '">' if page[:pareq_edit] %>
+								</td>
+								<td>
+									<%= '<input type="text" class="input_members" value="' if page[:pareq_edit] %><%= data[:instrument] %><%= '">' if page[:pareq_edit] %>
+								</td>
+								<td>
+									<%= '<input type="text" class="input_members" value="' if page[:pareq_edit] %><%= data[:detail] %><%= '">' if page[:pareq_edit] %>
+								</td>
+						</tr>
+					<% } %>
+				</tbody>
+			</table>
+		<% end %>
+		<% if page[:pareq_available][:tunes] %>
+			<h5>曲</h5>
+			<table>
+				<thead>
+					<tr>
+						<th>曲名</th>
+						<th>アーティスト</th>
+						<th>歌</th>
+						<th>備考</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% page[:pareq][:tunes].each.with_index { |data, index|	%>
+						<tr>
+								<td>
+									<%= '<input type="text" class="input_tunes" value="' if page[:pareq_edit] %><%= data[:name] %><%= '">' if page[:pareq_edit] %>
+								</td>
+								<td>
+									<%= '<input type="text" class="input_tunes" value="' if page[:pareq_edit] %><%= data[:artists] %><%= '">' if page[:pareq_edit] %>
+								</td>
+								<td>
+									<%= '<input type="text" class="input_tunes" value="' if page[:pareq_edit] %><%= data[:song] %><%= '">' if page[:pareq_edit] %>
+								</td>
+								<td>
+									<%= '<input type="text" class="input_tunes" value="' if page[:pareq_edit] %><%= data[:detail] %><%= '">' if page[:pareq_edit] %>
+								</td>
+						</tr>
+					<% } %>
+				</tbody>
+			</table>
+		<% end %>
+			<h5>備考</h5>
+			<textarea><%= page[:pareq][:remarks] %></textarea>
+		<input type="hidden" name="send_data" id="send_data" value="">
+		<input type="submit" value="保存">
+	</form>
+</div>
+
+<script>
+$(function(){
+	$('input').change(function(){
+		var trOBJ = $(this).parent().parent();
+		if( $(this).val() == "" ){
+			var f=true;
+			trOBJ.find('input').each(function(v){
+				if( v.val() != "" ){
+					f = false;
+				}
+			});
+			if( f && trOBJ.parent().children().length != trOBJ.parent().children().index(trOBJ) + 1 ){
+				trOBJ.remove();
+			}
+		}else{
+			alert("input change\n"+trOBJ.parent().children().index(trOBJ));
+			if( trOBJ.parent().children().length == trOBJ.parent().children().index(trOBJ) + 1 ){
+				var tmp = $(this).val();
+				$(this).val("");
+				trOBJ.clone(true).insertAfter(trOBJ);
+				$(this).val(tmp);
+			}
+		}
+	});
+	$('#edit').submit(function(){
+		var data = {test: "OK"};
+		$('#send_data').val( JSON.stringify(data) );
+		alert( $('#send_data').val() );
+		return true;	// falseを返すと送信しない
+	})
+});
+</script>
+
+<% end	# if page.has_key?(:pareq) %>

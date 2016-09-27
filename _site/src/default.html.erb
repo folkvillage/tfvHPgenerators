@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="<%= page[:meta_viewport].to_s %>">
+	<%= page[:meta_html].to_s %>
+	<title><%= page[:title].to_s %></title>
+	<link rel="shortcut icon" href="<%= rootdir %>favicon.ico" type="image/vnd.microsoft.icon">
+	<link rel="icon" href="<%= rootdir %>img/favicon256.png" type="image/png" sizes="256x256">
+	<link rel="icon" href="<%= rootdir %>img/favicon512.png" type="image/png" sizes="512x512">
+	<link rel="stylesheet" href="<%= rootdir %>style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script type="text/javascript" src="<%= rootdir %>main.js"></script> 
+</head>
+<body style="background-image: url(<%= rootdir %>img/back0.jpg);">
+<div id="wrapper">
+	<div id="contentWrapper">
+		<div id="header_wrapper">
+		<div id="header" style="background-image: url(<%= rootdir %>img/back.jpg);">
+			<header>
+			<div id="top_bar_wrapper">
+			<div id="top_bar">
+			<div id="mainmenu">
+				<% 	def img(image, width, height)
+						"<img src=\"#{image}\" style=\"width:#{width};height:#{height};\">"
+					end
+					def menubutton(image)
+						"<div class=\"menubutton\">
+							#{img(image, "105px", "30px")}
+						 </div>"
+					end
+				%>
+				<div id="TFV">
+					<a href="<%= rootdir %>index.html"><%= img(rootdir+"img/logo.png", "300px", "45px") %></a> 
+				</div>
+				<% if page[:fornew] %>
+					<div id="menu_fornew">
+						<a href="<%= rootdir %>for_new.html" id="menu_fornew_link">
+							<%= img(rootdir+"img/for_new.png", "80px", "80px") %>
+						</a>
+					</div>
+				<% end %>
+				<div id="menu">
+					<nav>
+						<ul id="menulist">
+							<li><%= alink( "/about.html", menubutton(rootdir+"img/about.png") )          %></li>
+							<li><%= alink( "/live/index.html", menubutton(rootdir+"img/live.png") )      %></li>
+							<li><%= alink( "/schedule.html", menubutton(rootdir+"img/schedule.png") )    %></li>
+							<li><%= alink( "/link.html", menubutton(rootdir+"img/link.png") )            %></li>
+							<li><%= alink( "/villagers/index.rb", menubutton(rootdir+"img/member.png") ) %></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+				<!-- <img src="<%= rootdir %>img/top_bar.png"> -->
+			</div>
+			</div>
+			</header>
+		</div>
+		</div>
+
+		<div id="content" style="background-image: url(<%= rootdir %>img/back.jpg);">
+
+			<%= content %>
+
+		</div>
+
+	</div>
+
+</div>
+
+<footer id="footer">
+	<p>Copyright &copy; つくばフォーク村. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

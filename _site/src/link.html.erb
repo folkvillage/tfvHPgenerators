@@ -1,0 +1,77 @@
+<%
+	page[:title] = "村のリンク"
+%>
+<div id="pagetitle">
+	<img src="<%= rootdir %>img/title_link.png">
+</div>
+
+<div id="link_wrap">
+	<br>
+	<h3>筑波大学軽音楽サークル</h3>
+	<ul>
+		<li><a href="http://www.stb.tsukuba.ac.jp/~ell/pc/">E.L.L.(筑波軽音楽協会)</a></li>
+		<li><a href="http://www.stb.tsukuba.ac.jp/~chikuon/">筑波音楽協会～CHIKUON～</a></li>
+		<li><a href="http://www.stb.tsukuba.ac.jp/~tojo_k-on/">TOJO K-ON</a></li>
+		<li><a href="http://www.geocities.co.jp/pbcmpbcmpbcm/">Band Stock Club PBCM</a></li>
+		<li><a href="http://unplugged.tsukuba.ch/">弾き語りクラブ"アンプラグド"</a></li>
+		<li><a href="http://www.stb.tsukuba.ac.jp/~geisa/">筑波大学芸術系サークル連合会</a></li>
+	</ul>
+	<br>
+	<h3>スタジオ＆楽器店＆ライブハウス inつくば</h3>
+	<ul>
+		<li><a href="http://www.music-plant.com/">MUSIC PLANT （楽器店＆スタジオ）</a></li>
+		<li><a href="http://www.songcycle.net/">SONG CYCLE （スタジオ）</a></li>
+		<li><a href="http://www.parkdiner.jp/">sound space PARKDINER （ライブハウス）</a></li>
+	</ul>
+	<br>
+	<h3>新入生向け</h3>
+	<ul>
+		<li><a href="http://www.stb.tsukuba.ac.jp/~shinkan/">筑波大学新入生歓迎祭</a></li>
+	</ul>
+	<br>
+	<h3 id="link_fmura">フォーク村メールアドレス</h3>
+	<img src="<%= rootdir %>img/fmura.png">
+	<br>
+	<div id="link_oldhp">
+		<p style="text-align:left;">旧村のホームページは、<a href="old/index.htm">こちら</a></p>
+	</div>
+</div>
+
+<style>
+#link_wrap {
+	width: 500px;
+	margin: 20px auto;
+}
+h3 {
+	text-align: left;
+	margin: 10px;
+	color: #232;
+}
+#link_wrap ul{
+	margin-left: 30px;
+	list-style: none;
+}
+#link_wrap li{
+	margin: 5px;
+}
+#link_wrap li a{
+	text-align: left;
+}
+#link_fmura{
+	margin-top: 50px;
+}
+#link_oldhp {
+	margin: 30px 10px;
+}
+</style>
+
+<script type="text/javascript">
+$(function() {
+	// スマホ用の処理
+	if( switch_smartphone() ){
+		if( window_width < 500 ){
+			$('#link_wrap').css('width', '100%');
+		}
+	}
+});
+</script>

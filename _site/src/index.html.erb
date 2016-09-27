@@ -1,0 +1,388 @@
+<%
+	# サイトの説明文
+	page[:meta_html] = '<meta name="description" content="' + page[:meta_description] + '">'
+%>
+<div id="top_main_wrapper">
+	<div id="top_main">
+		<div id="top_mainimage">
+			<% mainimages = Dir.glob( page[:top_image][:dir] + '*.jpg' ).sort %>
+			<% mainimages.each { | imagename | %>
+				<img src="<%= rootdir + imagename %>">
+			<% } %>
+		</div>
+		<div id="top_main_pick">
+			<img src="<%= rootdir %>img/pick_logo.png">
+		</div>
+		<% if page[:fornew] %>
+		<div id="top_main_fornew">
+			<a href="for_new.html"><img src="<%= rootdir %>img/for_new.png"></a>
+		</div>
+		<% end %>
+	</div>
+</div>
+
+<div id="top_wrapper">
+<div id="top_nextlive_wrap">
+	<div id="top_nextlive">
+		<img id="top_nextlive_logo" src="<%= rootdir %>img/top_next_live_logo.png">
+		<img id="top_nextlive_img" src="<%= rootdir %>img/top_next_live.png">
+		<div id="top_nextlive_content">
+				<h3 class="top_nextlive_name">
+					<%= alink(page[:nextlive][:nextlive_href], page[:nextlive][:nextlive_name]) %>
+				</h3>
+				<p class="top_nextlive_detail"><%= page[:nextlive][:nextlive_detail] %></p>
+				<h3 class="top_nextlive_name">
+					<%= alink(page[:nextlive][:nextlive2_href], page[:nextlive][:nextlive2_name]) %>
+				</h3>
+				<p class="top_nextlive_detail"><%= page[:nextlive][:nextlive2_detail] %></p>
+		</div>
+	</div>
+</div>
+<div id="top_info">
+	<div id="top_news_wrap">
+		<img src="<%= rootdir %>img/news.png">
+		<div id="top_news_main">
+			<% for news in page[:news] do %>
+				<div class="top_news_content">
+					<span class="top_news_date"><%= news[:date] %></span>
+					<div class="top_news_detail">
+						<p><%= news[:detatil] %></p>
+					</div>
+					<div style="clear: both;"></div>
+				</div>
+			<% end %>
+		</div>
+	</div>
+	<div id="top_twitter_wrap">
+		<img src="<%= rootdir %>img/twitter.png">
+		<div id="top_twitter">
+			<a class="twitter-timeline" href="https://twitter.com/tsukuba_fv" data-widget-id="584283128795009024">@tsukuba_fvさんのツイート</a>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+		</div>
+	</div>
+</div>
+</div>
+
+<style>
+#top_wrapper {
+	max-width: 1000px;
+}
+#top_main_wrapper {
+	position: relative;
+	width: 1000px;
+	height: 563px;
+}
+
+#top_main {
+	position: relative;
+	z-index: 300;
+	width: 1000px;
+	height: 563px;
+	box-shadow: -2px 5px 10px 7px;
+}
+
+#top_mainimage img {
+	display: none;
+	position: absolute;
+	z-index: 0;
+	top: 0;
+	left: 0;
+}
+#top_mainimage img:first-child {
+	display: block;
+}
+
+#top_main_pick img {
+	position: absolute;
+	z-index: 300;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+}
+
+#top_main_fornew img {
+	position: absolute;
+	z-index: 400;
+	top: 10px;
+	left: 20px;
+	width: 150px;
+	height: 150px;
+}
+
+#top_fornew {
+	background-image: url(<%= rootdir %>img/top_back2.png);
+}
+
+#top_nextlive_wrap {
+	position: relative;
+	width: 1000px;
+	height: 335px;
+	background-image: url(<%= rootdir %>img/back3.jpg);
+}
+#top_nextlive {
+	position: absolute;
+	z-index: 100;
+	top: 0;
+	left: 0;
+	width: 1000px;
+	height: 335px;
+}
+
+#top_nextlive_logo {
+	position:absolute;
+	z-index: 105;
+	top:20px;
+	left:20px;
+}
+
+#top_nextlive_content {
+	position: absolute;
+	z-index: 200;
+	top: 50px;
+	left: 660px;
+	width: 300px;
+	height: 250px;
+}
+
+.top_nextlive_name {
+	display: block;
+	height: 45px;
+	margin-top: 35px;
+	margin-bottom: 0;
+	font-size: 30px;
+	font-weight : normal;
+}
+.top_nextlive_name a{
+	color: #fda;
+}
+
+.top_nextlive_detail {
+	display: block;
+	height: 30px;
+	-webkit-margin-before: 0;
+	-webkit-margin-after: 0;
+	margin: 0 auto;
+	font-size: 20px;
+	color: #fff;
+}
+
+#top_info {
+	width: 1000px;
+	height: 850px;
+/*	background-image: url(<%= rootdir %>img/back6.jpg);*/
+}
+
+#top_news_wrap {
+	float: left;
+	width: 600px;
+	height: 100%;
+/*	background-image: url(<%= rootdir %>img/back5.jpg);*/
+}
+
+#top_news_main {
+	width: 450px;
+	min-height: 300px;
+	height: 600px;
+	margin: 20px auto;
+	padding: 10px;
+	border-radius: 5px;
+	border: solid 2px #323434;
+	overflow: auto;
+}
+
+#top_news_main p {
+	color: #222;
+}
+
+.top_news_content {
+	width: 400px;
+	margin: 20px auto;
+}
+
+.top_news_date {
+	float: left;
+	display: block;
+	width: 100px;
+	text-align: left;
+	font-size: small;
+}
+
+.top_news_detail {
+	float: left;
+	display: block;
+	width: 300px;
+}
+
+.top_news_detail p{
+	text-align: left;
+	font-size: small;
+}
+
+#top_twitter_wrap {
+	float: left;
+	width: 400px;
+	height: 100%;
+/*	background-image: url(<%= rootdir %>img/back6.jpg);*/
+}
+
+#top_twitter {
+	width: 350px;
+	margin: 20px auto;
+}
+
+#content {
+	padding: 0;
+}
+
+</style>
+
+<script>
+// スライドショー用の変数
+top_main_image = 1;
+top_prev_image = 0;
+top_main_image_max = <%= mainimages.count %>;
+
+$(function(){
+	// メイン画像のスライドショー
+	setInterval(function(){
+		top_prev_image = top_main_image;
+		top_main_image = top_main_image % top_main_image_max + 1;	// 次に表示する画像を決定
+		$('#top_mainimage img:nth-child('+top_main_image+')').css('z-index', '50');
+		$('#top_mainimage img:nth-child('+top_main_image+')').fadeIn(<%= page[:top_image][:fade_speed] %>, function(){
+			$('#top_mainimage img:nth-child('+top_prev_image+')').css('display', 'none');
+			$('#top_mainimage img:nth-child('+top_main_image+')').css('z-index', '0');
+		});
+	},<%= page[:top_image][:interval] %>);
+	
+
+	// スマホ用の処理
+	if( switch_smartphone() ){
+		$('#top_wrapper').css('width', '100%');
+		$('#top_main_wrapper').css('width', '100%');
+		$('#top_main_wrapper').css('height', (window_width*18/16) + 'px');
+		$('#top_main_wrapper').css('overflow', 'hidden');
+		$('#top_main').css('width', '100%');
+		$('#top_main').css('height', (window_width*18/16) + 'px');
+		$('#top_main').css('box-shadow', 'none');
+		$('#top_mainimage img').width('200%');
+		$('#top_mainimage img').css('left', '-'+(window_width/2)+'px');
+		$('#top_main_pick img').width('50%');
+	<% if page[:fornew] %>
+		$('#top_main_pick img').css('padding-top', '40%');
+	//	$('#top_main_fornew img').width('40%');
+		$('#top_main_fornew img').css('left', '0');
+		$('#top_main_fornew img').css('right', '0');
+		$('#top_main_fornew img').css('margin', 'auto');
+	<% end %>
+		$('#top_nextlive_wrap').width('100%');
+		$('#top_nextlive_wrap').height('400px');
+//		$('#top_nextlive_wrap').height(window_width + 'px');
+		$('#top_nextlive').width('100%');
+		$('#top_nextlive').height('100%');
+		$('#top_nextlive').css('overflow', 'hidden');
+		$('#top_nextlive_logo').width('90%');
+		$('#top_nextlive_img').css('position', 'absolute');
+		$('#top_nextlive_img').css('top', '70px');
+		$('#top_nextlive_img').css('right', Math.max(0,window_width/2-180)+'px');
+		$('#top_nextlive_content').css('top', '110px');
+		$('#top_nextlive_content').css('left', '0');
+		$('#top_nextlive_content').css('right', '0');
+		$('#top_nextlive_content').css('margin', 'auto');
+		$('#top_info').width('100%');
+		$('#top_info').height('1400px');
+		$('#top_info').css('overflow', 'hidden');
+		$('#top_news_wrap').width('100%');
+		$('#top_news_wrap').height('550px');
+		$('#top_news_main').css('padding', '5px');
+		$('#top_news_main').width( (window_width-20) +'px');
+		$('#top_news_main').height('300px');
+		$('.top_news_content').width('90%');
+		$('.top_news_content').css('margin', 'auto');
+		$('.top_news_date').css('margin-top', '15px');
+		$('.top_news_detail').width(window_width*0.9 +'px');
+		$('#top_twitter_wrap').css('width', '100%');
+		$('#top_twitter').css('width', '90%');
+		$('#top_twitter iframe').css('height', '400px');
+
+	}else{
+		// PCで有効
+
+		// 画面サイズ修正
+		if( window_width <= 1000 ){
+			$('meta[name="viewport"]').attr('content', 'width=1000');
+		}
+		
+		// 新入生へボタンにマウスが乗った時拡大する
+		$('#top_main_fornew img').hover(
+			function () {
+				$(this).animate({
+					width: '160px',
+					height: '160px'
+				}, 100);
+			},
+			function () {
+				$(this).animate({
+					width: '150px',
+					height: '150px'
+				}, 100);
+			}
+		);
+	}
+
+	// 最大化
+	$(window).keyup(function(e){
+		if( e.keyCode == 70 ){	// fが押された時
+			$('#wrapper').css('margin', '0');
+			$('#wrapper').css('height', '100%');
+			$('#header_wrapper').height('0');
+			$('#header').css('background-image', 'none');
+/*			$('#header').css('background-color', 'rgba(255,255,255,0.2)');*/
+			$('#header').css('box-shadow', 'none');
+			$('#content_wrapper').height('100%');
+			$('#content_wrapper').css('overflow', 'hidden');
+			$('#content').width('100%');
+			$('#content').css('max-width', '100%');
+			$('#top_main_wrapper').height(window_height + 'px');
+			$('#top_main_wrapper').width('100%');
+			$('#top_main').css('overflow', 'hidden');
+			$('#top_main').css('width', '100%');
+			$('#top_main').css('height', '100%');
+			$('#top_main_fornew').appendTo('#top_wrapper');
+			$('#top_main_fornew').css('position', 'absolute');
+			$('#top_main_fornew').css('z-index', '1500');
+			$('#top_main_fornew').css('top', '100px');
+			$('#top_wrapper').css('position', 'absolute');
+			$('#top_wrapper').css('z-index', '1000');
+			$('#top_wrapper').css('top', '0');
+			$('#top_wrapper').css('width', '100%');
+			$('#top_wrapper').css('height', '100%');
+			$('#top_wrapper').css('overflow', 'hidden');
+			$('#top_mainimage img').width( Math.max(window_width, window_height*16/9) + 'px' );
+			$('#top_nextlive_wrap').css('position', 'absolute');
+			$('#top_nextlive_wrap').css('left', '0');
+			$('#top_nextlive_wrap').css('bottom', '0');
+			$('#top_nextlive_wrap').css('background-image', 'none');
+			$('#top_nextlive_wrap').css('z-index', '1000');
+			$('#top_nextlive_wrap').css('height', '250px');
+			$('#top_nextlive img').css('display', 'none');
+			$('#top_nextlive_content').css('position', 'absolute');
+			$('#top_nextlive_content').css('z-index', '1002');
+			$('#top_nextlive_content').css('top', '0');
+			$('#top_nextlive_content').css('left', '10px');
+			$('.top_nextlive_name').css('text-align', 'left');
+			$('.top_nextlive_detail').css('text-align', 'left');
+			$('#top_news_wrap').css('display', 'none');
+			$('#top_twitter_wrap img').css('display', 'none');
+			$('#top_twitter').css('position', 'absolute');
+			$('#top_twitter').css('right', '10px');
+			$('#top_twitter').css('bottom', '10px');
+			$('#top_twitter').css('z-index', '1001');
+			$('#top_twitter').css('width', '250px');
+			$('#top_twitter iframe').css('height', '400px');
+			$('#footer').css('display', 'none');
+		}
+	});
+});
+</script>

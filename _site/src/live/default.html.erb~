@@ -1,0 +1,148 @@
+<% 
+	page[:title] = "村のライブ"
+	if !page.has_key?( :live_content )
+		page[:live_prevyear] = "2015"
+		page[:live_activeyear] = "2016"
+		page[:live_nextyear] = ""
+		page[:live_content] = [
+			{
+				name: "ライブ",
+				detail: "日にち  ＠場所",
+                                livedate: "",
+				CSV: ""
+			},
+		]
+		page[:live_list] = [
+			["", "ライブ一覧"],
+			["", "ライブ名"],
+		]
+	end
+%>
+
+<div id="pagetitle">
+	<img src="<%= rootdir %>img/title_live.png">
+</div>
+
+<div id="live_wrap">
+	<div id="live_menu">
+		<nav>
+			<div id="live_year">
+				<%= "<a href=\"../#{page[:live_prevyear]}/\">←</a>" if !page[:live_prevyear].empty? %>
+				<span id="live_year_active"><%= page[:live_activeyear] %>年度</span>
+				<%= "<a href=\"../#{page[:live_nextyear]}/\">→</a>" if !page[:live_nextyear].empty? %>
+			</div>
+			<div id="live_list">
+				<ul id="live_menulist">
+					<% for liveli in page[:live_list] do %>
+						<li><%= alink( liveli[0], liveli[1] ) %></li>
+					<% end %>
+				</ul>
+			</div>
+		</nav>
+	</div>
+
+	<div id="live_main">
+		<% for live in page[:live_content] do %>
+			<div class="live_name">
+				<h3 class="live_name"><%= live[:name] %></h3>
+				<p><b><%= live[:detail] %></b><br></p>
+				<h2 class="live_name"><%= live[:livedate] %> </h2>
+			</div>
+			<div class="live_table">
+				<% if live[:CSV].empty? %>
+				<% elsif live[:CSV].is_a?(String) %>
+					<%= tableFromCSV(live[:CSV], "live_table1") %>
+				<% elsif live[:CSV].is_a?(Array) %>
+					<% for csvname in live[:CSV] do %>
+						<%= tableFromCSV(csvname) %>
+					<% end %>
+				<% end %>
+			</div>
+			<br>
+		<% end %>
+	</div>
+	<div style="clear: both;"></div>
+</div>
+
+<style>
+#live_wrap {
+	width: 970px;
+	margin: 20px auto;
+}
+#live_menu {
+	float: left;
+	width: 200px;
+	margin: 0 10px;
+/*	background-image: url("../img/kogetya.jpg");*/
+}
+#live_year {
+	padding: 20px;
+	border-radius: 10px;
+	background-color: rgba(200,170,50,0.8);
+}
+#live_menulist {
+	margin: 2px auto;
+	list-style: none;
+}
+#live_menulist li {
+	display: block;
+	margin: 1px auto;
+	padding: 10px;
+	border-radius: 10px;
+	background-color: rgba(220, 200, 100, 0.8);
+}
+#live_main {
+	float: left;
+	width: 750px;
+}
+.live_name {
+	margin: 10px auto;
+}
+.live_name h3 {
+	font-size: 30px;
+	color: #111;
+}
+.live_table table {
+	width: 100%;
+	margin-bottom: 20px;
+	border-spacing: 0;
+/*	table-layout: fixed;*/
+	word-wrap: break-word;
+}
+.live_table thead th {
+	padding: 10px 20px;
+	background-color: rgba(255,255,255,0.6);
+	text-align: left;
+}
+.live_table td {
+	padding: 7px 10px;
+	text-align: left;
+}
+.live_table tr:nth-child(even) {
+	background-color: rgba(255,255,255,0.5);
+}
+.live_table tr:nth-child(odd) {
+	background-color: rgba(255,255,255,0.1);
+}
+.table_ordernum {
+	width: 50px;
+}
+</style>
+
+<script>
+$(function() {
+	// スマホ用の処理
+	if( switch_smartphone() ){
+		$('#live_wrap').css('width', '100%');
+		$('#live_year_active').click(function(){
+			$('#live_list').toggle();
+		});
+//		$('#live_list').css('display', 'none');
+		$('#live_main').css('width', '100%');
+//		$('.live_table table').css('width', (window_width - 16) +'px');
+		$('.live_table thead th').css('padding', '10px 2px');
+		$('.live_table td').css('padding', '7px 2px');
+		$('.table_ordernum').css('display', 'none');
+	}
+});
+</script>

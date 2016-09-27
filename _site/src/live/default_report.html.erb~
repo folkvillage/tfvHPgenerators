@@ -1,0 +1,92 @@
+<%
+   page[:title] = "ライブレポート"
+   if !page.has_key?( :live_content )
+     page[:live_content] = [
+      {
+        name: "ライブ",
+        detail: "日にち　＠場所",
+        CSV: ""
+       },
+     ]
+   end
+%>
+
+<div id="report_wrap">
+  <% for live in page[:live_content] do %>
+    <div class="report_name">
+       <h3 class="report_name"><%= live[:name] %></h3>
+       <p><b><%= live[:detail] %></b><br></p>
+    </div>
+    <div class="report_table">
+      <% if live[:CSV].empty? %>
+      <% elsif live[:CSV].is_a?(String) %>
+        <%= tableFromCSV(live[:CSV], "live_table1") %>
+				<% elsif live[:CSV].is_a?(Array) %>
+					<% for csvname in live[:CSV] do %>
+						<%= tableFromCSV(csvname) %>
+					<% end %>
+				<% end %>
+			</div>
+			<br>
+		<% end %>
+	</div>
+	<div style="clear: both;"></div>
+</div>
+
+<style>
+#report_wrap {
+	width: 970px;
+	margin: 20px auto;
+}
+.report_name {
+	margin: 10px auto;
+}
+.report_name h3 {
+	font-size: 30px;
+	color: #111;
+}
+.report_table table {
+	width: 100%;
+	margin-bottom: 20px;
+	border-spacing: 0;
+/*	table-layout: fixed;*/
+	word-wrap: break-word;
+}
+.report_table thead th {
+	padding: 5px 10px;
+	background-color: rgba(255,255,255,0.1);
+	text-align: left;
+}
+.report_table td {
+	padding: 7px 10px;
+	text-align: left;
+}
+.report_table tr:nth-child(even) {
+	background-color: rgba(255,255,255,0.5);
+}
+.report_table tr:nth-child(odd) {
+	background-color: rgba(255,255,255,0.1);
+}
+.table_ordernum {
+	width: 50px;
+}
+
+</style>
+
+<script>
+$(function() {
+	// スマホ用の処理
+	if( switch_smartphone() ){
+		$('#report_wrap').css('width', '100%');
+//		$('#live_year_active').click(function(){
+//			$('#live_list').toggle();
+//		});
+//		$('#live_list').css('display', 'none');
+//		$('#live_main').css('width', '100%');
+		$('.report_table table').css('width', (window_width - 16) +'px');
+		$('.report_table thead th').css('padding', '10px 2px');
+		$('.report_table td').css('padding', '7px 2px');
+		$('.table_ordernum').css('display', 'none');
+	}
+});
+</script>

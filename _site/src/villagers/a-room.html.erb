@@ -1,0 +1,95 @@
+<%
+	page[:title] = "A室枠表"
+	if !page.has_key?(:aroom) || page[:aroom].empty?
+		page[:aroom] = [
+			{ CSV: "data/a-room/Friday.csv" },
+			{ CSV: "data/a-room/Saturday.csv" },
+			{ CSV: "data/a-room/Tuesday.csv" },
+		]
+	end
+	page = {
+		login_admin: false,
+	}.merge(page)
+%>
+<h2>A室枠表</h2>
+
+<div id="aroom_wrap">
+	<p><%= page[:aroom_comment] %></p>
+	<div id="aroom_main">
+		<% for aroom in page[:aroom] do %>
+			<div class="aroom_table">
+				<% if aroom[:CSV].empty? %>
+				<% elsif aroom[:CSV].is_a?(String) %>
+					<%= tableFromCSV(aroom[:CSV]) %>
+				<% elsif aroom[:CSV].is_a?(Array) %>
+					<% for csvname in aroom[:CSV] do %>
+						<%= tableFromCSV(csvname) %>
+					<% end %>
+				<% end %>
+			</div>
+		<% end %>
+		<div style="clear: both;"></div>
+	</div>
+
+	<% if page[:login_admin] %>
+	<p>
+		<br>
+		<a href="a-room-edit-raw.rb">編集</a>
+	</p>
+	<% end %>
+</div>
+
+<style>
+#aroom_wrap {
+	width: 960px;
+	margin: 20px auto;
+}
+#aroom_wrap p {
+	margin: 20px;
+}
+.aroom_table {
+	float: left;
+	width: 300px;
+	margin: 10px;
+}
+.aroom_table table {
+	width: 100%;
+	margin-bottom: 20px;
+	border-spacing: 0;
+/*	table-layout: fixed;*/
+	word-wrap: break-word;
+}
+.aroom_table thead th {
+	padding: 10px 20px;
+	background-color: rgba(255,255,255,0.6);
+	text-align: left;
+}
+.aroom_table td {
+	padding: 7px 10px;
+	text-align: left;
+}
+.aroom_table tr:nth-child(even) {
+	background-color: rgba(255,255,255,0.5);
+}
+.aroom_table tr:nth-child(odd) {
+	background-color: rgba(255,255,255,0.1);
+}
+.table_ordernum {
+	width: 100px;
+}
+</style>
+
+<script>
+$(function() {
+	// スマホ用の処理
+	if( switch_smartphone() ){
+		$('#aroom_wrap').css('width', '100%');
+		$('#aroom_main').css('width', '100%');
+		$('.aroom_table').css('width', '100%');
+		$('.aroom_table').css('margin', '30px auto');
+		$('.aroom_table thead th').css('padding', '10px 2px');
+		$('.aroom_table td').css('padding', '7px 2px');
+		$('.table_ordernum').css('padding-left', '10px');
+	}
+});
+</script>

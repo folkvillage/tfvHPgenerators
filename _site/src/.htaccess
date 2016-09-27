@@ -1,0 +1,7 @@
+<fILES ~ "\.rb$">
+	deny from all
+</Files>
+IndexIgnore *
+order deny,allow
+
+

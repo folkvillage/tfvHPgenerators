@@ -1,0 +1,95 @@
+<%
+	page[:title] = "写真館"
+	# 読み込み
+	list_filename = Generate.expand_path('data/shashinkan/list.rb')
+	page = {
+		shashinkan_album: [],
+		shashinkan_record: { 2015 => [] },
+		shashinkan_sound: [],
+	}.merge(
+		eval File.read(list_filename, encoding: 'utf-8')	
+	).merge( page )
+%>
+
+<h2>写真館</h2>
+<div id="shashinkan">
+	<p>
+		村のライブで撮った写真は、Google+で限定公開しています。<br>
+		<a href="https://plus.google.com/u/0/109911536802649212811/">つくばフォーク村（写真館）</a>に友達申請してください。
+	</p>
+	<div id="shashinkan_g-plus">
+		<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+		<div class="g-plus" data-href="https://plus.google.com/109911536802649212811" rel="author" data-theme="light"></div>
+	</div>
+	<br>
+	<h3>アルバム一覧</h3>
+	<p>Google+のアカウントがなくても以下のリンクから見ることができます。</p>
+	<ul>
+		<% for item in page[:shashinkan_album] do %>
+			<li><a href="<%= item[:url] %>"><%= item[:detail] %></a></li>
+		<% end %>
+	</ul>
+	<br>
+	<h3>ライブ映像</h3>
+	<ul>
+		<% page[:shashinkan_record].each { |year, record| %>
+				<li><b><%= year.to_s %></b></li>
+			<% for item in record do %>
+				<li><a href="<%= item[:url] %>"><%= item[:detail] %></a></li>
+			<% end %>
+		<% } %>
+	</ul>
+	<br>
+	<h3>ライブ音源</h3>
+	<ul>
+		<% for item in page[:shashinkan_sound] do %>
+			<li><a href="<%= item[:url] %>"><%= item[:detail] %></a></li>
+		<% end %>
+	</ul>
+	<% if page.has_key?(:login_kiroku) && page[:login_kiroku] %>
+		<br><hr><br>
+		<p>
+			<a href="edit.rb">編集</a>
+		</p>
+	<% end %>
+</div>
+
+<style>
+#shashinkan{
+	max-width: 500px;
+	margin: 20px auto;
+}
+#shashinkan p{
+	margin-left: 20px;
+	text-align: left;
+}
+#shashinkan_g-plus {
+	margin: 5px auto;
+}
+#shashinkan h3 {
+	text-align: left;
+	margin: 10px;
+	color: #232;
+}
+#shashinkan ul {
+	color: #333;
+	list-style: none;
+	margin-left: 30px;
+}
+#shashinkan li{
+	margin: 10px;
+	text-align: left;
+}
+#shashinkan li a{
+	text-align: left;
+}
+</style>
+
+<script type="text/javascript">
+$(function() {
+	// スマホ用の処理
+	if( switch_smartphone() ){
+	}
+});
+</script>
+

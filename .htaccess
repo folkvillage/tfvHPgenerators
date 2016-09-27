@@ -1,0 +1,10 @@
+<fILES ~ "^\.">
+	deny from all
+</Files>
+<Files server.rb>
+	deny from all
+</Files>
+IndexIgnore *
+order deny,allow
+
+

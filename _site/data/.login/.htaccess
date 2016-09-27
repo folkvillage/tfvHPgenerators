@@ -1,0 +1,5 @@
+deny from all
+IndexIgnore *
+order deny,allow
+
+

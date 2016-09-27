@@ -1,0 +1,16 @@
+<%
+livedata = [
+	 {
+		name:"新歓祭",
+		date:"0407",
+		content: [
+			 {
+				name: "新歓祭",
+				detail: "4/7(木) 12:30 @石の広場",
+				CSV: "data/live/2016/report/0407.csv"
+			},
+			
+		]
+	}
+]
+%>

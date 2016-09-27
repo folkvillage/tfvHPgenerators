@@ -1,0 +1,938 @@
+{
+  "livename": "サマフェス",
+  "pareqs": [
+    {
+      "num": "0",
+      "name": "empty",
+      "orig": "",
+      "members": [
+        {
+          "name": "",
+          "part": "",
+          "mic": false,
+          "amp": "",
+          "monitor": [
+
+          ],
+          "detail": ""
+        }
+      ],
+      "tunes": [
+        {
+          "name": "",
+          "mc": false,
+          "detail": ""
+        }
+      ],
+      "remarks": ""
+    },
+    {
+      "num": "1",
+      "name": "empty",
+      "orig": "ああ",
+      "members": [
+        {
+          "name": "lll",
+          "part": "gt",
+          "mic": true,
+          "amp": "marshal",
+          "detail": "kk"
+        },
+        {
+          "name": "mm",
+          "part": "cc",
+          "mic": true,
+          "amp": "",
+          "detail": "oa"
+        },
+        {
+          "name": "",
+          "part": "",
+          "mic": false,
+          "amp": "",
+          "detail": ""
+        }
+      ],
+      "monitors": [
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "3",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "tunes": [
+        {
+          "mc": false,
+          "name": "",
+          "detail": ""
+        }
+      ],
+      "remarks": ""
+    },
+    {
+      "num": "0",
+      "name": "empty",
+      "orig": "",
+      "members": [
+        {
+          "name": "",
+          "part": "",
+          "mic": false,
+          "amp": "",
+          "monitor": [
+
+          ],
+          "detail": ""
+        }
+      ],
+      "tunes": [
+        {
+          "name": "",
+          "mc": false,
+          "detail": ""
+        }
+      ],
+      "remarks": ""
+    },
+    {
+      "num": "0",
+      "name": "empty",
+      "orig": "",
+      "members": [
+        {
+          "name": "",
+          "part": "",
+          "mic": false,
+          "amp": "",
+          "monitor": [
+
+          ],
+          "detail": ""
+        }
+      ],
+      "tunes": [
+        {
+          "name": "",
+          "mc": false,
+          "detail": ""
+        }
+      ],
+      "remarks": ""
+    },
+    {
+      "num": "0",
+      "name": "empty",
+      "orig": "",
+      "members": [
+        {
+          "name": "",
+          "part": "",
+          "mic": false,
+          "amp": "",
+          "monitor": [
+
+          ],
+          "detail": ""
+        }
+      ],
+      "tunes": [
+        {
+          "name": "",
+          "mc": false,
+          "detail": ""
+        }
+      ],
+      "remarks": ""
+    },
+    {
+      "num": "0",
+      "name": "empty",
+      "orig": "",
+      "members": [
+        {
+          "name": "",
+          "part": "",
+          "mic": false,
+          "amp": "",
+          "monitor": [
+
+          ],
+          "detail": ""
+        }
+      ],
+      "tunes": [
+        {
+          "name": "",
+          "mc": false,
+          "detail": ""
+        }
+      ],
+      "remarks": ""
+    },
+    {
+      "num": "0",
+      "name": "empty",
+      "orig": "",
+      "members": [
+        {
+          "name": "",
+          "part": "",
+          "mic": false,
+          "amp": "",
+          "monitor": [
+
+          ],
+          "detail": ""
+        }
+      ],
+      "tunes": [
+        {
+          "name": "",
+          "mc": false,
+          "detail": ""
+        }
+      ],
+      "remarks": ""
+    },
+    {
+      "num": "0",
+      "name": "empty",
+      "orig": "",
+      "members": [
+        {
+          "name": "",
+          "part": "",
+          "mic": false,
+          "amp": "",
+          "monitor": [
+
+          ],
+          "detail": ""
+        }
+      ],
+      "tunes": [
+        {
+          "name": "",
+          "mc": false,
+          "detail": ""
+        }
+      ],
+      "remarks": ""
+    },
+    {
+      "num": "0",
+      "name": "empty",
+      "orig": "",
+      "members": [
+        {
+          "name": "",
+          "part": "",
+          "mic": false,
+          "amp": "",
+          "monitor": [
+
+          ],
+          "detail": ""
+        }
+      ],
+      "tunes": [
+        {
+          "name": "",
+          "mc": false,
+          "detail": ""
+        }
+      ],
+      "remarks": ""
+    },
+    {
+      "num": "0",
+      "name": "empty",
+      "orig": "",
+      "members": [
+        {
+          "name": "",
+          "part": "",
+          "mic": false,
+          "amp": "",
+          "monitor": [
+
+          ],
+          "detail": ""
+        }
+      ],
+      "tunes": [
+        {
+          "name": "",
+          "mc": false,
+          "detail": ""
+        }
+      ],
+      "remarks": ""
+    },
+    {
+      "num": "0",
+      "name": "empty",
+      "orig": "",
+      "members": [
+        {
+          "name": "",
+          "part": "",
+          "mic": false,
+          "amp": "",
+          "monitor": [
+
+          ],
+          "detail": ""
+        }
+      ],
+      "tunes": [
+        {
+          "name": "",
+          "mc": false,
+          "detail": ""
+        }
+      ],
+      "remarks": ""
+    },
+    {
+      "num": "0",
+      "name": "empty",
+      "orig": "",
+      "members": [
+        {
+          "name": "",
+          "part": "",
+          "mic": false,
+          "amp": "",
+          "monitor": [
+
+          ],
+          "detail": ""
+        }
+      ],
+      "tunes": [
+        {
+          "name": "",
+          "mc": false,
+          "detail": ""
+        }
+      ],
+      "remarks": ""
+    },
+    {
+      "num": "0",
+      "name": "empty",
+      "orig": "",
+      "members": [
+        {
+          "name": "",
+          "part": "",
+          "mic": false,
+          "amp": "",
+          "monitor": [
+
+          ],
+          "detail": ""
+        }
+      ],
+      "tunes": [
+        {
+          "name": "",
+          "mc": false,
+          "detail": ""
+        }
+      ],
+      "remarks": ""
+    },
+    {
+      "num": "0",
+      "name": "empty",
+      "orig": "",
+      "members": [
+        {
+          "name": "",
+          "part": "",
+          "mic": false,
+          "amp": "",
+          "monitor": [
+
+          ],
+          "detail": ""
+        }
+      ],
+      "tunes": [
+        {
+          "name": "",
+          "mc": false,
+          "detail": ""
+        }
+      ],
+      "remarks": ""
+    },
+    {
+      "num": "0",
+      "name": "empty",
+      "orig": "",
+      "members": [
+        {
+          "name": "",
+          "part": "",
+          "mic": false,
+          "amp": "",
+          "monitor": [
+
+          ],
+          "detail": ""
+        }
+      ],
+      "tunes": [
+        {
+          "name": "",
+          "mc": false,
+          "detail": ""
+        }
+      ],
+      "remarks": ""
+    },
+    {
+      "num": "0",
+      "name": "empty",
+      "orig": "",
+      "members": [
+        {
+          "name": "",
+          "part": "",
+          "mic": false,
+          "amp": "",
+          "monitor": [
+
+          ],
+          "detail": ""
+        }
+      ],
+      "tunes": [
+        {
+          "name": "",
+          "mc": false,
+          "detail": ""
+        }
+      ],
+      "remarks": ""
+    },
+    {
+      "num": "0",
+      "name": "empty",
+      "orig": "",
+      "members": [
+        {
+          "name": "",
+          "part": "",
+          "mic": false,
+          "amp": "",
+          "monitor": [
+
+          ],
+          "detail": ""
+        }
+      ],
+      "tunes": [
+        {
+          "name": "",
+          "mc": false,
+          "detail": ""
+        }
+      ],
+      "remarks": ""
+    },
+    {
+      "num": "0",
+      "name": "empty",
+      "orig": "",
+      "members": [
+        {
+          "name": "",
+          "part": "",
+          "mic": false,
+          "amp": "",
+          "monitor": [
+
+          ],
+          "detail": ""
+        }
+      ],
+      "tunes": [
+        {
+          "name": "",
+          "mc": false,
+          "detail": ""
+        }
+      ],
+      "remarks": ""
+    },
+    {
+      "num": "0",
+      "name": "empty",
+      "orig": "",
+      "members": [
+        {
+          "name": "",
+          "part": "",
+          "mic": false,
+          "amp": "",
+          "monitor": [
+
+          ],
+          "detail": ""
+        }
+      ],
+      "tunes": [
+        {
+          "name": "",
+          "mc": false,
+          "detail": ""
+        }
+      ],
+      "remarks": ""
+    },
+    {
+      "num": "0",
+      "name": "empty",
+      "orig": "",
+      "members": [
+        {
+          "name": "",
+          "part": "",
+          "mic": false,
+          "amp": "",
+          "monitor": [
+
+          ],
+          "detail": ""
+        }
+      ],
+      "tunes": [
+        {
+          "name": "",
+          "mc": false,
+          "detail": ""
+        }
+      ],
+      "remarks": ""
+    },
+    {
+      "num": "0",
+      "name": "empty",
+      "orig": "",
+      "members": [
+        {
+          "name": "",
+          "part": "",
+          "mic": false,
+          "amp": "",
+          "monitor": [
+
+          ],
+          "detail": ""
+        }
+      ],
+      "tunes": [
+        {
+          "name": "",
+          "mc": false,
+          "detail": ""
+        }
+      ],
+      "remarks": ""
+    },
+    {
+      "num": "0",
+      "name": "empty",
+      "orig": "",
+      "members": [
+        {
+          "name": "",
+          "part": "",
+          "mic": false,
+          "amp": "",
+          "monitor": [
+
+          ],
+          "detail": ""
+        }
+      ],
+      "tunes": [
+        {
+          "name": "",
+          "mc": false,
+          "detail": ""
+        }
+      ],
+      "remarks": ""
+    },
+    {
+      "num": "0",
+      "name": "empty",
+      "orig": "",
+      "members": [
+        {
+          "name": "",
+          "part": "",
+          "mic": false,
+          "amp": "",
+          "monitor": [
+
+          ],
+          "detail": ""
+        }
+      ],
+      "tunes": [
+        {
+          "name": "",
+          "mc": false,
+          "detail": ""
+        }
+      ],
+      "remarks": ""
+    },
+    {
+      "num": "0",
+      "name": "empty",
+      "orig": "",
+      "members": [
+        {
+          "name": "",
+          "part": "",
+          "mic": false,
+          "amp": "",
+          "monitor": [
+
+          ],
+          "detail": ""
+        }
+      ],
+      "tunes": [
+        {
+          "name": "",
+          "mc": false,
+          "detail": ""
+        }
+      ],
+      "remarks": ""
+    },
+    {
+      "num": "0",
+      "name": "empty",
+      "orig": "",
+      "members": [
+        {
+          "name": "",
+          "part": "",
+          "mic": false,
+          "amp": "",
+          "monitor": [
+
+          ],
+          "detail": ""
+        }
+      ],
+      "tunes": [
+        {
+          "name": "",
+          "mc": false,
+          "detail": ""
+        }
+      ],
+      "remarks": ""
+    },
+    {
+      "num": "0",
+      "name": "empty",
+      "orig": "",
+      "members": [
+        {
+          "name": "",
+          "part": "",
+          "mic": false,
+          "amp": "",
+          "monitor": [
+
+          ],
+          "detail": ""
+        }
+      ],
+      "tunes": [
+        {
+          "name": "",
+          "mc": false,
+          "detail": ""
+        }
+      ],
+      "remarks": ""
+    },
+    {
+      "num": "0",
+      "name": "empty",
+      "orig": "",
+      "members": [
+        {
+          "name": "",
+          "part": "",
+          "mic": false,
+          "amp": "",
+          "monitor": [
+
+          ],
+          "detail": ""
+        }
+      ],
+      "tunes": [
+        {
+          "name": "",
+          "mc": false,
+          "detail": ""
+        }
+      ],
+      "remarks": ""
+    },
+    {
+      "num": "0",
+      "name": "empty",
+      "orig": "",
+      "members": [
+        {
+          "name": "",
+          "part": "",
+          "mic": false,
+          "amp": "",
+          "monitor": [
+
+          ],
+          "detail": ""
+        }
+      ],
+      "tunes": [
+        {
+          "name": "",
+          "mc": false,
+          "detail": ""
+        }
+      ],
+      "remarks": ""
+    },
+    {
+      "num": "0",
+      "name": "empty",
+      "orig": "",
+      "members": [
+        {
+          "name": "",
+          "part": "",
+          "mic": false,
+          "amp": "",
+          "monitor": [
+
+          ],
+          "detail": ""
+        }
+      ],
+      "tunes": [
+        {
+          "name": "",
+          "mc": false,
+          "detail": ""
+        }
+      ],
+      "remarks": ""
+    },
+    {
+      "num": "0",
+      "name": "empty",
+      "orig": "",
+      "members": [
+        {
+          "name": "",
+          "part": "",
+          "mic": false,
+          "amp": "",
+          "monitor": [
+
+          ],
+          "detail": ""
+        }
+      ],
+      "tunes": [
+        {
+          "name": "",
+          "mc": false,
+          "detail": ""
+        }
+      ],
+      "remarks": ""
+    },
+    {
+      "num": "0",
+      "name": "empty",
+      "orig": "",
+      "members": [
+        {
+          "name": "",
+          "part": "",
+          "mic": false,
+          "amp": "",
+          "monitor": [
+
+          ],
+          "detail": ""
+        }
+      ],
+      "tunes": [
+        {
+          "name": "",
+          "mc": false,
+          "detail": ""
+        }
+      ],
+      "remarks": ""
+    },
+    {
+      "num": "0",
+      "name": "empty",
+      "orig": "",
+      "members": [
+        {
+          "name": "",
+          "part": "",
+          "mic": false,
+          "amp": "",
+          "monitor": [
+
+          ],
+          "detail": ""
+        }
+      ],
+      "tunes": [
+        {
+          "name": "",
+          "mc": false,
+          "detail": ""
+        }
+      ],
+      "remarks": ""
+    },
+    {
+      "num": "0",
+      "name": "empty",
+      "orig": "",
+      "members": [
+        {
+          "name": "",
+          "part": "",
+          "mic": false,
+          "amp": "",
+          "monitor": [
+
+          ],
+          "detail": ""
+        }
+      ],
+      "tunes": [
+        {
+          "name": "",
+          "mc": false,
+          "detail": ""
+        }
+      ],
+      "remarks": ""
+    },
+    {
+      "num": "0",
+      "name": "empty",
+      "orig": "",
+      "members": [
+        {
+          "name": "",
+          "part": "",
+          "mic": false,
+          "amp": "",
+          "monitor": [
+
+          ],
+          "detail": ""
+        }
+      ],
+      "tunes": [
+        {
+          "name": "",
+          "mc": false,
+          "detail": ""
+        }
+      ],
+      "remarks": ""
+    },
+    {
+      "num": "0",
+      "name": "empty",
+      "orig": "",
+      "members": [
+        {
+          "name": "",
+          "part": "",
+          "mic": false,
+          "amp": "",
+          "monitor": [
+
+          ],
+          "detail": ""
+        }
+      ],
+      "tunes": [
+        {
+          "name": "",
+          "mc": false,
+          "detail": ""
+        }
+      ],
+      "remarks": ""
+    }
+  ]
+}

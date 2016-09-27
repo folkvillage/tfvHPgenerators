@@ -1,0 +1,243 @@
+<%
+livedata = [
+	{
+		name: "新歓祭",
+		date: "0406",
+		content: [
+			{
+				name: "新歓祭",
+				detail: "4/6(月)  12:00  ＠石の広場",
+				CSV: "data/live/2015/live0406.csv"
+			},
+			{
+				name: "ブース弾き語り",
+				detail: "4/6(月)  ＠1E501",
+				CSV: "data/live/2015/live_booth.csv"
+			},
+		]
+	},
+	{
+		name: "ミー後ライブ",
+		date: "0407",
+		content: [
+			{
+				name: "ミー後ライブ",
+				detail: "4/7~5/1  ＠A室",
+				CSV: "data/live/2015/live_migo.csv"
+			},
+		]
+	},
+	{
+		name: "芸サ合同新歓",
+		date: "0412",
+		content: [
+			{
+				name: "芸サ合同新歓",
+				detail: "4/12(日)  12:10~12:50  ＠松美池",
+				CSV: [
+					"data/live/2015/live0412.csv",
+					"data/live/2015/live0412b.csv"
+				]
+			},
+		]
+	},
+	{
+		name: "松美池ライブ",
+		date: "0418",
+		content: [
+			{
+				name: "松美宣伝ライブ",
+				detail: "4/13(月)  昼休憩  ＠２・３学間",
+				CSV: "data/live/2015/live0413.csv"
+			},
+			{
+				name: "松美池ライブ",
+				detail: "4/18(土)  11:00  ＠松美池",
+				CSV: "data/live/2015/live0418.csv"
+			},
+		]
+	},
+	{
+		name: "aiaiモール弾き語りライブ",
+		date: "0429",
+		content: [
+			{
+				name: "aiaiモール弾き語りライブ宣伝",
+				detail: "4/22(水)  昼休憩  ＠松美池",
+				CSV: "data/live/2015/live0422.csv"
+			},
+			{
+				name: "aiaiモール弾き語りライブ",
+				detail: "4/29(水)  11:00  ＠<a href=\"http://goo.gl/maps/ddBwQ\">aiaiモール</a>",
+				CSV: "data/live/2015/live0429.csv"
+			},
+		]
+	},
+	{
+		name: "やどかり祭",
+		date: "0529",
+		content: [
+			{
+				name: "野外ステージライブ",
+				detail: "<やどかり祭前夜祭>5/29(金)  16:30  ＠メインステージ",
+				CSV: "data/live/2015/live0529.csv"
+			},
+			{
+				name: "ミニステージ弾き語りライブ",
+				detail: "<やどかり祭本祭>5/30(土)  17:45  ＠ミニステージ",
+				CSV: "data/live/2015/live0530.csv"
+			}
+		]
+	},
+	{
+		name: "JuLive",
+		date: "0711",
+		content: [
+			{
+				name: "JuLive",
+				detail: "7/11(土)10:30  ＠A室",
+				CSV: "data/live/2015/live0711.csv"
+			},
+		]
+	},
+	{
+		name: "サマフェス",
+		date: "0828",
+		content: [
+			{
+				name: "サマフェス1日目",
+				detail: "8/28(金)  11:30  ＠松美池",
+				CSV: "data/live/2015/live0828.csv"
+			},
+			{
+				name: "サマフェス2日目",
+				detail: "8/29(土)  10:30  ＠松美池",
+				CSV: "data/live/2015/live0829.csv"
+			}
+		]
+	},
+	{
+		name: "フェス",
+		date: "1003",
+		content: [
+			{
+				name: "フェス1日目",
+				detail: "10/03(土)  11:00  ＠松美池",
+				CSV: "data/live/2015/live1003.csv"
+			},
+			{
+				name: "フェス2日目",
+				detail: "10/04(日)  11:20  ＠松美池",
+				CSV: "data/live/2015/live1004.csv"
+			}
+		]
+	},
+	{
+		name: "学園祭ライブ",
+		date: "1106",
+		content: [
+			{
+				name: "学園祭ライブ前夜祭",
+				detail: "11/06(金)  16:00  ＠UNITEDステージ",
+				CSV: "data/live/2015/live1106.csv"
+			},
+			{
+				name: "学園祭ライブ1日目 @ UNITEDステージ",
+				detail: "11/07(土)  10:00  ＠UNITEDステージ",
+				CSV: "data/live/2015/live1107a.csv"
+			},
+			{
+				name: "学園祭ライブ1日目 @ 3A304",
+				detail: "11/07(土)  14:00  ＠3A304",
+				CSV: "data/live/2015/live1107b.csv"
+			},
+			{
+				name: "学園祭ライブ2日目",
+				detail: "11/08(日)  10:00  ＠3A304",
+				CSV: "data/live/2015/live1108.csv"
+			},
+		]
+	},
+	{
+		name: "代替わりライブ",
+		date: "1121",
+		content: [
+			{
+				name: "代替わりライブ1日目",
+				detail: "11/21(土)  13:00  ＠文化系サークル会館3階A室",
+				CSV: "data/live/2015/live1121.csv"
+			},
+			{
+				name: "代替わりライブ2日目",
+				detail: "11/22(日)  11:00  ＠文化系サークル会館3階A室",
+				CSV: "data/live/2015/live1122.csv"
+			}
+		]
+	},
+	{
+		name: "ラブライブ",
+		date: "1212",
+		content: [
+			{
+				name: "ラブライブ宣伝",
+				detail: "12/1(火)  昼休憩  ＠松美池",
+				CSV: "data/live/2015/live1201.csv"
+			},
+			{
+				name: "ラブライブ1日目",
+				detail: "12/12(土)  11:00  ＠1E401",
+				CSV: "data/live/2015/live1212.csv"
+			},
+			{
+				name: "ラブライブ2日目",
+				detail: "12/13(日)  10:00  ＠1E401",
+				CSV: "data/live/2015/live1213.csv"
+			}
+		]
+	},
+	{	
+		name: "寒フェス",
+		date: "0130",
+		content: [
+			{
+				name: "寒フェス",
+				detail: "1/30(土)11:00  ＠1B308",
+				CSV: "data/live/2015/live0130.csv"
+			},
+		]
+	},
+	{	
+		name: "さわこん",
+		date: "0305",
+		content: [
+			{
+				name: "さわこん",
+				detail: "3/5(土)13:15  ＠1B308",
+				CSV: "data/live/2015/live0305.csv"
+			},
+		]
+	},
+	{
+		name: "39代追いコン",
+		date: "0318",
+		content: [
+			{
+				name: "39代追いコン前夜祭",
+				detail: "3/18(金)  17:00  ＠文化系サークル会館3階A室",
+				CSV: "data/live/2015/live0318.csv"
+			},
+			{
+				name: "39代追いコン1日目",
+				detail: "3/19(土)  11:00  ＠文化系サークル会館3階A室",
+				CSV: "data/live/2015/live0319.csv"
+			},
+			{
+				name: "39代追いコン2日目",
+				detail: "3/20(日)  11:00  ＠文化系サークル会館3階A室",
+				CSV: "data/live/2015/live0320.csv"
+			},
+		]
+	},
+	
+]	
+%>

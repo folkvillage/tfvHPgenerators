@@ -1,0 +1,15 @@
+<IfModule mod_rewrite.c>
+	<Files ~ ".(html|rb)$">
+		RewriteEngine on
+		RewriteCond %{HTTPS} on
+		RewriteRule ^(.*)$ http://%{HTTP_HOST}%{REQUEST_URI} [R,L]
+	</Files>
+</IfModule>
+<Files ~ "^\.">
+	deny from all
+</Files>
+DirectoryIndex index.html index.htm
+IndexIgnore *
+order deny,allow
+
+

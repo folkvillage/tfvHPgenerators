@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	
+	<title>ライブレポート - つくばフォーク村</title>
+	<link rel="shortcut icon" href="../favicon.ico" type="image/vnd.microsoft.icon">
+	<link rel="icon" href="../img/favicon256.png" type="image/png" sizes="256x256">
+	<link rel="icon" href="../img/favicon512.png" type="image/png" sizes="512x512">
+	<link rel="stylesheet" href="../style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script type="text/javascript" src="../main.js"></script> 
+</head>
+<body style="background-image: url(../img/back0.jpg);">
+<div id="wrapper">
+	<div id="contentWrapper">
+		<div id="header_wrapper">
+		<div id="header" style="background-image: url(../img/back.jpg);">
+			<header>
+			<div id="top_bar_wrapper">
+			<div id="top_bar">
+			<div id="mainmenu">
+				
+				<div id="TFV">
+					<a href="../index.html"><img src="../img/logo.png" style="width:300px;height:45px;"></a> 
+				</div>
+				
+				<div id="menu">
+					<nav>
+						<ul id="menulist">
+							<li><a href="../about.html"><div class="menubutton">
+							<img src="../img/about.png" style="width:105px;height:30px;">
+						 </div></a></li>
+							<li><a href="../live/index.html"><div class="menubutton">
+							<img src="../img/live.png" style="width:105px;height:30px;">
+						 </div></a></li>
+							<li><a href="../schedule.html"><div class="menubutton">
+							<img src="../img/schedule.png" style="width:105px;height:30px;">
+						 </div></a></li>
+							<li><a href="../link.html"><div class="menubutton">
+							<img src="../img/link.png" style="width:105px;height:30px;">
+						 </div></a></li>
+							<li><a href="../villagers/index.rb"><div class="menubutton">
+							<img src="../img/member.png" style="width:105px;height:30px;">
+						 </div></a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+				<!-- <img src="../img/top_bar.png"> -->
+			</div>
+			</div>
+			</header>
+		</div>
+		</div>
+
+		<div id="content" style="background-image: url(../img/back.jpg);">
+
+			
+
+<div id="report_wrap">
+  
+    <div class="report_name">
+       <h3 class="report_name">ライブ</h3>
+       <p><b>日にち  ＠場所</b><br></p>
+    </div>
+    <div class="report_table">
+      
+      
+			</div>
+			<br>
+		
+	</div>
+	<div style="clear: both;"></div>
+</div>
+
+<style>
+#report_wrap {
+	width: 970px;
+	margin: 20px auto;
+}
+.report_name {
+	margin: 10px auto;
+}
+.report_name h3 {
+	font-size: 30px;
+	color: #111;
+}
+.report_table table {
+	width: 100%;
+	margin-bottom: 20px;
+	border-spacing: 0;
+/*	table-layout: fixed;*/
+	word-wrap: break-word;
+}
+.report_table thead th {
+	padding: 5px 10px;
+	background-color: rgba(255,255,255,0.1);
+	text-align: left;
+}
+.report_table td {
+	padding: 7px 10px;
+	text-align: left;
+}
+.report_table tr:nth-child(even) {
+	background-color: rgba(255,255,255,0.1);
+}
+.report_table tr:nth-child(odd) {
+	background-color: rgba(255,255,255,0.5);
+}
+.table_ordernum {
+	width: 50px;
+}
+.report_table img {
+        width: 384px;
+        height: auto;
+}
+
+</style>
+
+<script>
+$(function() {
+	// スマホ用の処理
+	if( switch_smartphone() ){
+		$('#report_wrap').css('width', '100%');
+//		$('#live_year_active').click(function(){
+//			$('#live_list').toggle();
+//		});
+//		$('#live_list').css('display', 'none');
+//		$('#live_main').css('width', '100%');
+		$('.report_table table').css('width', (window_width - 16) +'px');
+		$('.report_table thead th').css('padding', '10px 2px');
+		$('.report_table td').css('padding', '7px 2px');
+		$('.table_ordernum').css('display', 'none');
+                $('.report_table img').css('width', (384 * 0.4) + 'px');
+	}
+});
+</script>
+
+
+		</div>
+
+	</div>
+
+</div>
+
+<footer id="footer">
+	<p>Copyright &copy; つくばフォーク村. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

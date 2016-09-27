@@ -1,0 +1,127 @@
+<%
+	page[:title] = "A室枠表の編集"
+%>
+<h2>A室枠表編集フォーム</h2>
+<form name="edit" method="post" action="a-room-edit.rb">
+<table class="hoge" summary="入力フォーム" border="1">
+<tr><th colspan="2">日付(金)</th><th colspan="2">日付(土)</th><th colspan="2">日付(火)</th></tr>
+
+<tr>
+<th width="50">朝枠</th>
+<td><input type="text" size="20" maxlength="100" name="0" value="">
+<input type="checkbox" name="0" value="自由">自由
+<input type="checkbox" name="0" value="無し">無し
+</td>
+<th width="50">7:00〜</th>
+<td><input type="text" size="20" maxlength="100" name="8" value="">
+<input type="checkbox" name="8" value="自由">自由
+<input type="checkbox" name="8" value="無し">無し
+</td>
+
+<td colspan="2"></td>
+</tr>
+
+<tr>
+<th>一限</th>
+<td><input type="text" size="20" maxlength="100" name="1" value="">
+<input type="checkbox" name="1" value="自由">自由
+<input type="checkbox" name="1" value="無し">無し</td>
+<th>9:00〜</th>
+<td><input type="text" size="20" maxlength="100" name="9" value="">
+<input type="checkbox" name="9" value="自由">自由
+<input type="checkbox" name="9" value="無し">無し</td>
+
+<td colspan="2"></td>
+</tr>
+
+<tr>
+<th>二限</th>
+<td><input type="text" size="20" maxlength="100" name="2" value="">
+<input type="checkbox" name="2" value="自由">自由
+<input type="checkbox" name="2" value="無し">無し</td>
+<th>10:30〜</th>
+<td><input type="text" size="20" maxlength="100" name="10" value="">
+<input type="checkbox" name="10" value="自由">自由
+<input type="checkbox" name="10" value="無し">無し</td>
+
+<td colspan="2"></td>
+</tr>
+
+<tr>
+<th>昼</th>
+<td><input type="text" size="20" maxlength="100" name="3" value="">
+<input type="checkbox" name="3" value="自由">自由
+<input type="checkbox" name="3" value="無し">無し</td>
+
+<td colspan="2"></td>
+
+<td colspan="2"></td>
+</tr>
+
+<tr>
+<th>三限</th>
+<td><input type="text" size="20" maxlength="100" name="4" value="">
+<input type="checkbox" name="4" value="自由">自由
+<input type="checkbox" name="4" value="無し">無し</td>
+<th>12:00〜</th>
+<td><input type="text" size="20" maxlength="100" name="11" value="">
+<input type="checkbox" name="11" value="自由">自由
+<input type="checkbox" name="11" value="無し">無し</td>
+<th  width="50">三限</th>
+<td><input type="text" size="20" maxlength="100" name="15" value="">
+<input type="checkbox" name="15" value="自由">自由
+<input type="checkbox" name="15" value="無し">無し</td>
+</tr>
+
+<tr>
+<th>四限</th>
+<td><input type="text" size="20" maxlength="100" name="5" value="">
+<input type="checkbox" name="5" value="自由">自由
+<input type="checkbox" name="5" value="無し">無し</td>
+<th>13:30〜</th>
+<td><input type="text" size="20" maxlength="100" name="12" value="">
+<input type="checkbox" name="12" value="自由">自由
+<input type="checkbox" name="12" value="無し">無し</td>
+<th>四限</th>
+<td><input type="text" size="20" maxlength="100" name="16" value="">
+<input type="checkbox" name="16" value="自由">自由
+<input type="checkbox" name="16" value="無し">無し</td>
+</tr>
+
+<tr>
+<th>五限</th>
+<td><input type="text" size="20" maxlength="100" name="6" value="">
+<input type="checkbox" name="6" value="自由">自由
+<input type="checkbox" name="6" value="無し">無し</td>
+<th>15:00〜</th>
+<td><input type="text" size="20" maxlength="100" name="13" value="">
+<input type="checkbox" name="13" value="自由">自由
+<input type="checkbox" name="13" value="無し">無し</td>
+<th>五限</th>
+<td><input type="text" size="20" maxlength="100" name="17" value="">
+<input type="checkbox" name="17" value="自由">自由
+<input type="checkbox" name="17" value="無し">無し</td>
+</tr>
+
+<tr>
+<th>六限</th>
+<td><input type="text" size="20" maxlength="100" name="7" value="">
+<input type="checkbox" name="7" value="自由">自由
+<input type="checkbox" name="7" value="無し">無し</td>
+<th>16:30〜</th>
+<td><input type="text" size="20" maxlength="100" name="14" value="">
+<input type="checkbox" name="14" value="自由">自由
+<input type="checkbox" name="14" value="無し">無し</td>
+<th>六限</th>
+<td><input type="text" size="20" maxlength="100" name="18" value="">
+<input type="checkbox" name="18" value="自由">自由
+<input type="checkbox" name="18" value="無し">無し</td>
+</tr>
+
+</table>
+
+	<input type="hidden" name="continue" value="1">
+	<input type="submit" value="更新">
+	<input type="button" onclick="document.edit.continue.value='0'; document.edit.submit();" value="終了">
+
+</form>

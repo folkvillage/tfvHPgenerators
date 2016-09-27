@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>つくばフォーク村</title>
+	<link rel="shortcut icon" href="img/favicon.png" type="image/png">
+	<link rel="stylesheet" href="style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script type="text/javascript" src="main.js"></script> 
+</head>
+<body>
+<div id="wrapper">
+	<div id="contentWrapper">
+		<div id="header_wrapper">
+		<div id="header" style="background-image: url(img/back.jpg);">
+			<header>
+			<div id="top_bar_wrapper">
+			<div id="top_bar">
+			<div id="mainmenu">
+				
+				<div id="TFV">
+					<a href="index.html"><img src="img/logo.png" style="width:300px;height:45px;"></a> 
+				</div>
+				<div id="menu">
+					<nav>
+						<ul id="menulist">
+							<li><a href="about.html"><div class="menubutton">
+							<img src="img/about.png" style="width:105px;height:30px;">
+						 </div></a></li>
+							<li><a href="live/index.html"><div class="menubutton">
+							<img src="img/live.png" style="width:105px;height:30px;">
+						 </div></a></li>
+							<li><a href="schedule.html"><div class="menubutton">
+							<img src="img/schedule.png" style="width:105px;height:30px;">
+						 </div></a></li>
+							<li><a href="link.html"><div class="menubutton">
+							<img src="img/link.png" style="width:105px;height:30px;">
+						 </div></a></li>
+							<li><a href="villagers/index.rb"><div class="menubutton">
+							<img src="img/member.png" style="width:105px;height:30px;">
+						 </div></a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+				<!-- <img src="img/top_bar.png"> -->
+			</div>
+			</div>
+			</header>
+		</div>
+		</div>
+
+		<div id="content" style="background-image: url(img/back.jpg);">
+
+			
+<div id="top_main_wrapper">
+	<div id="top_main">
+		<div class="top_mainimage">
+			<img src="img/top_main1.jpg">
+		</div>
+		<div id="top_main_pick">
+			<img src="img/pick_logo.png">
+		</div>
+		<div id="top_main_fornew">
+			<a href="for_new.html"><img src="img/for_new.png"></a>
+		</div>
+	</div>
+</div>
+<div id="top_wrapper">
+<!--
+<div id="top_fornew">
+	<a href="for_new.html">
+		<img height="150px" src="img/for_new.jpg">
+	</a>
+</div>
+-->
+<div id="top_nextlive_wrap">
+	<!--	<img src="img/back3.jpg">-->
+	<div id="top_nextlive">
+		<img src="img/top_next_live.png">
+		<!-- <img height="423px" src="img/top_nextlive.png"> -->
+		<div id="top_nextlive_content">
+			<p>
+				<span class="top_nextlive_name">
+					<a href="live/2015/0406.html">新歓祭</a>
+				</span><br>
+				<span class="top_nextlive_detail">4/6 ＠石の広場, ＠1E501</span>
+			</p>
+			<p>
+				<span class="top_nextlive_name">
+					<a href="live/2015/0407.html">ミー後ライブ</a>
+				</span><br>
+				<span class="top_nextlive_detail">4/7〜5/1 ＠A室</span>
+			</p>
+		</div>
+	</div>
+</div>
+<div id="top_info">
+	<div id="top_news_wrap">
+		<img src="img/news.png">
+		<div id="top_news_main">
+			
+				<div class="top_news_content">
+					<span class="top_news_date">2015/4/6</span>
+					<div class="top_news_detail">
+						<p>ホームページをリニューアルしました。旧ホームページは<a href="link.html">リンク</a>から参照できます。</p>
+					</div>
+				</div>
+			
+		</div>
+	</div>
+	<div id="top_twitter_wrap">
+		<img src="img/twitter.png">
+		<div id="top_twitter">
+			<a class="twitter-timeline" href="https://twitter.com/tsukuba_fv" data-widget-id="584283128795009024">@tsukuba_fvさんのツイート</a>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+		</div>
+	</div>
+</div>
+</div>
+
+<div id="top_wrap_spacer"></div>
+
+<style>
+#top_wrapper {
+/*	position: relative;
+	width: 1275px;
+	left: -130px;*/
+	width: 1000px;
+}
+#top_wrap_spacer {
+/*	height: 20px;*/
+}
+#top_main_wrapper {
+	position: relative;
+/*	left: -130px;
+	width: 1275px;
+	height: 828px;*/
+	width: 1000px;
+	height: 563px;
+}
+
+#top_main {
+	position: relative;
+	z-index: 300;
+/*	top: -30px;
+	width: 1275px;
+	height: 848px;*/
+	width: 1000px;
+	height: 563px;
+	box-shadow: -2px 5px 10px 7px;
+}
+
+#top_main_pick img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+}
+
+#top_main_fornew img {
+	position: absolute;
+	top: 10px;
+	left: 20px;
+}
+
+#top_fornew {
+	background-image: url(img/top_back2.png);
+}
+
+#top_nextlive_wrap {
+	position: relative;
+	width: 1000px;
+	height: 335px;
+	background-image: url(img/back3.jpg);
+}
+#top_nextlive {
+	position: absolute;
+	z-index: 100;
+	top: 0;
+	left: 0;
+	width: 1000px;
+	height: 335px;
+}
+
+#top_nextlive_content {
+	position: absolute;
+	z-index: 200;
+	top: 60px;
+	left: 650px;
+	width: 300px;
+	height: 250px;
+}
+
+.top_nextlive_name {
+	display: block;
+	margin-top: 30px;
+	font-size: 30px;
+}
+.top_nextlive_name a{
+	color: #fda;
+}
+
+.top_nextlive_detail {
+	display: block;
+	font-size: 20px;
+	color: #fff;
+}
+
+#top_info {
+/*	display: flex;
+	display: -webkit-flex;
+	flex-wrap: wrap;*/
+	width: 1000px;
+	height: 850px;
+/*	background-image: url(img/back6.jpg);*/
+}
+
+#top_news_wrap {
+	float: left;
+	width: 600px;
+	height: 100%;
+/*	background-image: url(img/back5.jpg);*/
+}
+
+#top_news_main {
+	width: 450px;
+	min-height: 500px;
+	height: 600px;
+	margin: 20px auto;
+	padding: 10px;
+	border-radius: 5px;
+	border: solid 2px #323434;
+}
+
+#top_news_main p {
+	color: #222;
+}
+
+.top_news_content {
+	display: flex;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-box;
+	display: -webkit-flex;
+	width: 400px;
+	margin: 20px auto;
+}
+
+.top_news_date {
+	display: block;
+	width: 100px;
+}
+
+.top_news_detail {
+	display: block;
+	width: 300px;
+}
+
+.top_news_detail p{
+	text-align: left;
+}
+
+#top_twitter_wrap {
+	float: left;
+	width: 400px;
+	height: 100%;
+/*	background-image: url(img/back6.jpg);*/
+}
+
+#top_twitter {
+	width: 350px;
+	margin: 30px auto;
+}
+
+#content {
+	padding: 0;
+}
+
+</style>
+
+<script>
+var bgc=0;
+top_main_image = 0;
+$(function(){
+	// メイン画像のスライドショー
+//	setInterval(function(){
+//		$('.top_main_image[]')
+//	},1000);
+});
+</script>
+
+
+
+		</div>
+
+	</div>
+
+</div>
+
+<footer id="footer">
+	<p>Copyright &copy; つくばフォーク村. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

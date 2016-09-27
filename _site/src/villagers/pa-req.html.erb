@@ -1,0 +1,304 @@
+<%
+	page[:title] = "PA表"
+	if page.has_key?(:pareq)	# page[:pareq]が設定されてない場合はなにも表示しない
+		if page[:pareq_edit]
+			# 編集用フォームヘルパ
+			def input_text(value, placeholder, classname="")
+				'<input type="text" class="input_text '+classname+'" placeholder="'+placeholder+'" value="'+value.to_s+'">'
+			end
+			def input_checkbox(value, label, classname="")
+				'<label class="'+classname+'"><input type="checkbox" class="input_checkbox" '+((value)?'checked':'')+'>'+label.to_s+'</label>'
+			end
+			def input_textarea(value, placeholder, classname="")
+				'<textarea class="input_textarea '+classname+'" placeholder="'+placeholder+'">'+value.to_s+'</textarea>'
+			end
+		else
+			# edit=0のときは、表示するだけにする
+			def input_text(value, placeholder, classname="")
+				'<span class="span_text '+classname+'">'+value.to_s+'</span>'
+			end
+			def input_checkbox(value, label, classname="")
+				'<span class="span_checkbox '+classname+'">'+((value)?label:'')+'</span>'
+			end
+			def input_textarea(value, placeholder, classname="")
+				value = value.to_s.gsub(/\r\n|\r|\n/, "<br>")
+				'<p class="input_textarea '+classname+'">'+value+'</p>'
+			end
+		end
+%>
+
+<h3>PA表</h3>
+
+<div id="pa_wrap">
+	<h5>出演順: <%= page[:pareq]["num"] %></h5>
+	<br>
+	<form name="edit" id="edit" method="post" action="pa-req.rb">
+		<h5>バンド名</h5>
+		<p>
+		<%= input_text(page[:pareq]["name"], "バンド名", "bandname") %>/
+		<%= input_text(page[:pareq]["orig"], "コピー元", "origname") %>
+		</p>
+			<hr>
+			<div id="members">
+			<h5>メンバー</h5>
+			<% page[:pareq]["members"].each.with_index { |data, index|	%>
+				<div class="member">
+					<%= input_text(data["name"], "村民名", "m_name") %>
+					<%= input_text(data["part"], "パート", "m_part") %>
+					<%= input_checkbox(data["mic"], "マイク", "m_mic") %>
+					<%= input_text(data["amp"], "使用アンプ", "m_amp") %>
+					<br>
+					<%= input_textarea(data["detail"], "個人機材・音の種類・要望等", "m_detail") %>
+				</div>
+			<% } %>
+			</div>
+			<hr>
+			<div id="monitors">
+			<h5>モニター</h5>
+				<table id="monitors_table">
+					<% monitor_from = ['モニター', 'Dr', 'Ba', 'key', 'エレアコ', 'Gt(下)', 'Gt(上)', 'Vo'] %>				
+					<% monitor_to = ['Ba', 'Gt', 'front', 'Dr', 'Key'] %>				
+					<% monitor_select = ['なし', '小', '中', '大'] %>				
+					<tr>
+						<% for from in monitor_from %>
+							<th><%= from %></th>
+						<% end %>	
+					</tr>
+					<% monitor_to.each.with_index do |to, i_to| %>
+						<tr class="monitor">
+							<% monitor_from.each.with_index do |from, i_from| %>
+								<% if i_from == 0 %>
+									<th><%= to %></th>
+									<% next %>
+								<% end %>
+							<td>
+								<% selected = page[:pareq]["monitors"] || []	# nilガード %>
+								<% selected = selected[i_to] || [] %>
+								<% selected = (selected[i_from-1] || 0).to_i %>
+								<% if page[:pareq_edit] %>
+								<select>
+									<% monitor_select.each.with_index do |sel, i| %>
+										<option value="<%= i %>"<%= ' selected' if selected == i %>><%= sel %></option>
+									<% end %>
+								</select>
+								<% else %>
+									<span class="<%= (selected==0)?"sel_none":"" %>"><%= monitor_select[selected] %></span>
+								<% end %>
+							</td>
+							<% end %>
+						</tr>
+					<% end %>	
+				</table>
+			</div>
+			<hr>
+			<div id="tunes">
+				<h5>曲</h5>
+			<% page[:pareq]["tunes"].each.with_index { |data, index|	%>
+				<div class="tune">
+					<%= input_checkbox(data["mc"], "MC", "t_mc") %>
+					<br>
+					<%= input_text(data["name"], "曲名", "t_name") %>
+					<%= input_text(data["detail"], "要望", "t_detail") %>
+				</div>
+			<% } %>
+			</div>
+			<hr>
+			<h5>備考</h5>
+			<%= input_textarea(page[:pareq]["remarks"], "備考", "remarks") %>
+			<hr>
+		<% if page[:pareq_edit] %>
+			<input type="hidden" name="send_data" id="send_data" value="">
+			<input type="submit" id="submit_button" value="保存">
+		<% else %>
+			<div id="pa_next">
+				<a href="pa-req.rb?num=<%= (page[:pareq]["num"].to_i + 1).to_s %>">次</a>
+			</div>
+			<div id="pa_list">
+				<a href="pa-req.rb">一覧へ戻る</a>
+			</div>
+		<% end %>
+	</form>
+</div>
+
+<style>
+#pa_wrap {
+	width: 640px;
+	margin: 30px auto;
+	padding: 50px;
+	border-radius: 10px;
+	background-color: rgba(255, 255, 255, 0.3);
+}
+.bandname .origname {
+	width: 300px;
+}
+hr {
+	margin: 20px;
+}
+.member, #tunes, #monitors{
+	margin: 5px auto;
+	padding: 10px 5px;
+	background-color: rgba(255, 255, 255, 0.5);
+	border-radius: 5px;
+}
+.m_name {
+	display: inline-block;
+	width: 200px;
+}
+.m_part {
+	display: inline-block;
+	width: 60px;
+}
+.m_mic {
+	display: inline-block;
+	width: 60px;
+	color: #c50;
+}
+.m_amp {
+	display: inline-block;
+	width: 160px;
+}
+#monitors {
+	overflow: scroll;
+}
+#monitors_table {
+	margin: 10px auto;
+}
+#monitors_table td{
+	width: 60px;
+}
+.sel_none {
+	color: #bbb;
+}
+.tune {
+	margin: 10px auto;
+}
+.t_mc {
+	color: #57c;
+}
+.t_name {
+	display: inline-block;
+	width: 150px;
+	text-align: left;
+}
+.t_detail {
+	display: inline-block;
+	width: 150px;
+	text-align: left;
+}
+textarea {
+	height: 3em;
+}
+.input_textarea {
+	margin: 5px auto;
+	width: 500px;
+	text-align: left;
+}
+.remarks {
+	height: 6em;
+}
+#submit_button{
+	width: 200px;
+	height: 50px;
+	border-radius: 5px;
+	color: #fff;
+	/*background-color: rgba(150, 200, 100, 1.0);*/
+	background-color: rgba(0, 162, 154, 1.0);
+}
+#pa_next, #pa_list {
+	width: 200px;
+	margin: 10px auto;
+	text-align: center;
+	border-radius: 5px;
+	background-color: rgba(230, 150, 0, 1.0);
+}
+#pa_next a, #pa_list a{
+	display: block;
+	width: 100%;
+	height: 100%;
+	padding: 20px;
+	color: #fff;
+}
+#pa_list {
+	background-color: rgba(0, 162, 154, 1.0);
+}
+</style>
+
+<script>
+$(function(){
+	// メンバー、曲の入力欄を自動で増減する
+	$('input').change(function(){
+		var trOBJ = $(this).parent();
+		if( trOBJ.is('.member,.tune') )
+		if( $(this).val() == "" ){
+			var f=true;
+			trOBJ.find('input').each(function(i, v){
+				if( $(v).val() != "" && !$(v).is('[type="checkbox"]')){
+					f = false;
+				}
+			});
+			if( f && trOBJ.parent().children().length != trOBJ.parent().children().index(trOBJ) + 1 ){
+				trOBJ.remove();
+			}
+		}else{
+			//alert("input change\n"+trOBJ.parent().children().index(trOBJ));
+			if( trOBJ.parent().children().length == trOBJ.parent().children().index(trOBJ) + 1 ){
+				var tmp = $(this).val();
+				$(this).val("");
+				trOBJ.clone(true).insertAfter(trOBJ).find('input[type="checkbox"]').prop('checked', false);
+				$(this).val(tmp);
+			}
+		}
+	});
+	// 保存処理
+	$('#edit').submit(function(){
+		$('input').each(function(index, obj){
+			$(obj).val( $(obj).val().replace(/"/g, '&quot;').replace(/'/g, '&#x27;').replace(/\\/g, '') );
+		});
+		var data = {
+			'num': '<%= page[:pareq]["num"] %>',
+			'name': $('.bandname').val(),
+			'orig': $('.origname').val(),
+			'members': [],
+			'monitors': [],
+			'tunes': [],
+			'remarks': $('.remarks').val()
+		};
+		$('.member').each(function(index, obj){
+			data.members[index] = {};
+			data.members[index]['name']   = $(obj).find('.m_name').val();
+			data.members[index]['part']   = $(obj).find('.m_part').val();
+			data.members[index]['mic']    = $(obj).find('.m_mic input').prop('checked');
+			data.members[index]['amp']    = $(obj).find('.m_amp').val();
+			data.members[index]['detail'] = $(obj).find('.m_detail').val();
+		});
+		$('.monitor').each(function(index, obj){
+			data.monitors[index] = [];
+			$(obj).find('select').each(function(i, s_obj){
+				data.monitors[index][i] = $(s_obj).val();
+			});
+		});
+		$('.tune').each(function(index, obj){
+			data.tunes[index] = {};
+			data.tunes[index]['mc']     = $(obj).find('.t_mc input').prop('checked');
+			data.tunes[index]['name']   = $(obj).find('.t_name').val();
+			data.tunes[index]['detail'] = $(obj).find('.t_detail').val();
+		});
+		$('#send_data').val( JSON.stringify(data) );
+//		alert(JSON.stringify(data));
+		return true;	// falseを返すと送信しない
+	})
+
+	// スマホ表示
+	if( switch_smartphone() ){
+		$('#pa_wrap').css('width', '100%');
+		$('#pa_wrap').css('padding', '30px 0');
+		$('.bandname').after('<br>');
+		$('.m_part').after('<br>');
+		$('.input_textarea').css('width', '95%');
+		$('#monitors_table td').css('width', (window_width/8)+'px');
+	}
+});
+</script>
+
+<% end	# if page.has_key?(:pareq) %>
+

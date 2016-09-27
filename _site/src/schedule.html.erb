@@ -1,0 +1,27 @@
+<%
+	page[:title] = "村の予定表"
+%>
+<div id="pagetitle">
+	<img src="<%= rootdir %>img/title_schedule.png">
+</div>
+
+<div id="sche_wrap">
+	<iframe src="https://www.google.com/calendar/embed?src=7qj4tmeko5i2ce5ljah5ov8nug%40group.calendar.google.com&ctz=Asia/Tokyo" style="border: 0" width="900" height="700" frameborder="0" scrolling="no"></iframe>
+</div>
+
+<style>
+#sche_wrap {
+	margin: 20px;
+}
+</style>
+
+<script type="text/javascript">
+$(function() {
+	// スマホ用の処理
+	if( switch_smartphone() ){
+		$('#sche_wrap iframe').width('100%');
+		$('#sche_wrap iframe').height(window_width + 'px');
+		$('#sche_wrap').css('margin', '0');
+	}
+});
+</script>

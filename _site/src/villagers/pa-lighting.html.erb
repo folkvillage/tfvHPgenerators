@@ -1,0 +1,51 @@
+<%
+	page[:title] = "PA表・照明要望表"
+%>
+<h2>PA表・照明要望表</h2>
+
+<div id="palg_wrap">
+	<p> PA表、照明要望表は以下のリンクよりダウンロードしてください。</p>
+	<p><b> PA表 </b></p>
+	<div class="v_button">
+		<a href="../PA_print.pdf">バンドPA表</a>
+	</div>
+	<div class="v_button">
+		<a href="../PA_hiki.pdf">弾き語りPA表</a>
+	</div>
+	<p><b> 照明要望表 </b></p>
+	<div class="v_button">
+		<a href="../shomei.pdf">照明要望表</a>
+	</div>
+	<p> (音源の提出は照明要望表に書いてあるメールアドレスへお願いします) </p>
+	<br>
+	<br>
+	<br>
+<!--
+	<h3>Web提出</h3>
+	<div class="v_button">
+		<a href="pa-req.rb">要望表フォーム</a>
+	</div>
+-->
+</div>
+
+
+<style>
+#palg_wrap{
+	max-width: 500px;
+	margin: 20px auto;
+}
+#palg_wrap p{
+	margin: 5px;
+	line-height: 130%;
+	text-align: left;
+}
+</style>
+
+<script type="text/javascript">
+$(function() {
+	// スマホ用の処理
+	if( switch_smartphone() ){
+	}
+});
+</script>
+

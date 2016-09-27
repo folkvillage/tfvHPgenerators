@@ -1,0 +1,63 @@
+<%
+   page[:title] = "ライブレポート"
+
+   #
+   # 設定ファイルにしたがって、live/年度/report以下のすべてのファイルの生成を行う
+   #
+
+   src = File.read("src/live/default_report.html.erb", encoding: 'utf-8') # テンプレート読み込み
+	index_url = ""	# リダイレクト先URL
+	# 年度ごとに処理
+	live_years = Dir.glob('data/live/*/').sort
+	# 未設定がないかチェック
+	loop do
+		# 読み込み
+		livedata = []
+		filename = live_years.last + "data_report.erb"
+		ERB.new(File.read(filename)).result(binding) if File.exist?(filename)
+		# チェック
+		break if !livedata.empty? && !livedata.first[:name].empty?
+		live_years.pop();
+	end
+	live_years.each { |dir|
+		# 読み込み
+		livedata = []
+		ERB.new(File.read(dir + "data_report.erb")).result(binding)
+		# 前後の年度の設定
+		page[:live_prevyear] = page[:live_activeyear].to_s
+		page[:live_activeyear] = File.basename(dir)
+		nextyear_i = live_years.index(dir) + 1;
+		page[:live_nextyear] = (live_years.size > nextyear_i) ? File.basename(live_years[nextyear_i]) : ""
+		# この年のライブ一覧を作る
+		page[:live_list] = []
+		for ld in livedata do
+			page[:live_list] << [ ld[:date].to_s + '.html', ld[:name].to_s]
+		end
+		# 書き出し
+		for ld in livedata do
+			page[:live_content] = ld[:content]
+			outfilename = "live/#{page[:live_activeyear].to_s}/report/#{ld[:date].to_s}.html"
+			Generate.html(src, outfilename, page)
+		end
+		# index.htmlをつくる
+#		index_url = (page[:live_nextyear].empty?) ? livedata.last[:date] : livedata.first[:date]
+		#page[:meta_html] = "<meta http-equiv=\"Refresh\" content=\"0; URL=#{index_url.to_s}.html\">"
+#		outsrc = "<script>$(function(){location.href=\"#{index_url.to_s}.html\";});</script>"
+#		outfilename = "live/#{page[:live_activeyear].to_s}/report/index.html"
+#		Generate.html(outsrc, outfilename, page)
+		page[:meta_html] = ""	#もとに戻す
+	}
+%>
+
+<%
+	# live/index_report.html 用のデータを用意する
+	index_url = "#{page[:live_activeyear].to_s}/report/#{index_url.to_s}.html"
+	#page[:meta_html] = "<meta http-equiv=\"Refresh\" content=\"0; URL=#{index_url.to_s}\">"
+%>
+
+<div id="pagetitle">
+	<img src="<%= rootdir %>img/title_live.png">
+</div>
+
+<script> $( function(){ location.href="<%= index_url.to_s %>"; } ); </script>
+

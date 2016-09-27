@@ -1,0 +1,54 @@
+<%
+	page[:title] = "エントリーシート"
+%>
+
+<h2>エントリーシート</h2>
+
+<div id="entry_wrap">
+	<h3>スプレッドシート一覧</h3>
+	<ul>
+		<% for spsheet in page[:spreadsheet] do %>
+			<li><a href="<%= spsheet[:url] %>"><%= spsheet[:detail] %></a></li>
+		<% end %>
+	</ul>
+<!--
+	<h3>エントリーシート</h3>
+	<ul>
+		<li><a href="">テストエントリーシート</a></li>
+	</ul> 
+-->
+</div>
+
+<style>
+#entry_wrap h3 {
+	text-align: left;
+	margin: 10px;
+	color: #232;
+}
+#entry_wrap ul {
+	color: #333;
+	list-style: none;
+	margin-left: 30px;
+}
+#entry_wrap li{
+	margin: 10px;
+}
+#entry_wrap li a{
+	text-align: left;
+}
+#entry_wrap {
+	width: 500px;
+	margin: 20px auto;
+}
+</style>
+
+<script type="text/javascript">
+$(function() {
+	// スマホ用の処理
+	if( switch_smartphone() ){
+		if( window_width < 500 ){
+			$('#entry_wrap').css('width', '100%');
+		}
+	}
+});
+</script>

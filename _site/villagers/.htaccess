@@ -1,0 +1,18 @@
+<IfModule mod_rewrite.c>
+	<Files ~ ".(html|rb)$">
+    	RewriteEngine on
+    	RewriteCond %{HTTPS} off
+    	RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
+	</Files>
+	<Files ~ ".html$">
+    	RewriteEngine on
+    	RewriteRule ^(.*)$ https://%{HTTP_HOST}/~fmura/villagers/index.rb?show=%{REQUEST_FILENAME} [L]
+	</Files>
+</IfModule>
+<FILES ~ "\.html$">
+#	deny from all
+</FILES>
+IndexIgnore *
+order deny,allow
+
+

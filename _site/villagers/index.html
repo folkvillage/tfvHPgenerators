@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	
+	<title>村民のページ - つくばフォーク村</title>
+	<link rel="shortcut icon" href="../favicon.ico" type="image/vnd.microsoft.icon">
+	<link rel="icon" href="../img/favicon256.png" type="image/png" sizes="256x256">
+	<link rel="icon" href="../img/favicon512.png" type="image/png" sizes="512x512">
+	<link rel="stylesheet" href="../style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script type="text/javascript" src="../main.js"></script> 
+</head>
+<body style="background-image: url(../img/back0.jpg);">
+<div id="wrapper">
+	<div id="contentWrapper">
+		<div id="header_wrapper">
+		<div id="header" style="background-image: url(../img/back.jpg);">
+			<header>
+			<div id="top_bar_wrapper">
+			<div id="top_bar">
+			<div id="mainmenu">
+				
+				<div id="TFV">
+					<a href="../index.html"><img src="../img/logo.png" style="width:300px;height:45px;"></a> 
+				</div>
+				
+				<div id="menu">
+					<nav>
+						<ul id="menulist">
+							<li><a href="../about.html"><div class="menubutton">
+							<img src="../img/about.png" style="width:105px;height:30px;">
+						 </div></a></li>
+							<li><a href="../live/index.html"><div class="menubutton">
+							<img src="../img/live.png" style="width:105px;height:30px;">
+						 </div></a></li>
+							<li><a href="../schedule.html"><div class="menubutton">
+							<img src="../img/schedule.png" style="width:105px;height:30px;">
+						 </div></a></li>
+							<li><a href="../link.html"><div class="menubutton">
+							<img src="../img/link.png" style="width:105px;height:30px;">
+						 </div></a></li>
+							<li><a href="../villagers/index.rb"><div class="menubutton">
+							<img src="../img/member.png" style="width:105px;height:30px;">
+						 </div></a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+				<!-- <img src="../img/top_bar.png"> -->
+			</div>
+			</div>
+			</header>
+		</div>
+		</div>
+
+		<div id="content" style="background-image: url(../img/back.jpg);">
+
+			
+
+<h2>村民のページ</h2>
+
+<div id="villagers_info">
+	<p>ここは、村民のためのページです。</p>
+	
+	<form name="logout" method="post" action="index.rb">
+		<input type="hidden" name="login_id" value="logout">
+		<input type="submit" value="ログアウト">
+	</form>
+	
+</div>
+
+<nav>
+	<ul id="villagersMenu">
+		
+			<li>
+				<a href="a-room.html">
+					<div class="villagers_menubutton" style="background-image: url(../img/aroom_r.png);">
+						<img src="../img/aroom_.png" alt="A室枠表">
+					</div>
+				</a>
+			</li>
+		
+			<li>
+				<a href="longterm-a-room.html">
+					<div class="villagers_menubutton" style="background-image: url(../img/long_aroom_r.png);">
+						<img src="../img/long_aroom_.png" alt="長期休暇A室枠表">
+					</div>
+				</a>
+			</li>
+		
+			<li>
+				<a href="entry/index.html">
+					<div class="villagers_menubutton" style="background-image: url(../img/entry_r.png);">
+						<img src="../img/entry_.png" alt="エントリーシート">
+					</div>
+				</a>
+			</li>
+		
+			<li>
+				<a href="pa-lighting.html">
+					<div class="villagers_menubutton" style="background-image: url(../img/palight_r.png);">
+						<img src="../img/palight_.png" alt="PA・照明要望表">
+					</div>
+				</a>
+			</li>
+		
+			<li>
+				<a href="shashinkan/index.rb">
+					<div class="villagers_menubutton" style="background-image: url(../img/shashin_r.png);">
+						<img src="../img/shashin_.png" alt="写真館">
+					</div>
+				</a>
+			</li>
+		
+		
+		<div style="clear: both;"></div>
+	</ul>
+</nav>
+
+<div id="villagers_cal">
+	<iframe src="https://www.google.com/calendar/embed?showTitle=1&amp;showTabs=1&amp;showCalendars=0&amp;showTz=0&amp;height=700&amp;wkst=1&amp;src=folkvillagephotostudio%40gmail.com&amp;color=%23AB8B00&amp;ctz=Asia%2FTokyo" style=" border-width:0 " width="900" height="700" frameborder="0" scrolling="no"></iframe>
+</div>
+
+
+<style>
+
+#villagers_info {
+	margin: 20px auto;
+}
+
+#villagersMenu {
+	list-style: none;
+	max-width: 775px;
+	margin: 0 auto;
+	padding-bottom: 10px;
+}
+
+#villagersMenu li {
+	float: left;
+/*	border-radius: 5px; */
+	margin: 2px;
+	width: 150px;
+	height: 150px;
+}
+
+.villagers_menubutton {
+	width: 150px;
+	height: 150px;
+}
+
+.villagers_menubutton img{
+	display: none;
+}
+
+</style>
+
+<script type="text/javascript">
+$(function() {
+	// スマホ用の処理
+	if( switch_smartphone() ){
+		$('#villagers_cal iframe').width('100%');
+		$('#villagers_cal iframe').height(window_width + 'px');
+		$('#villagersMenu').width( 154 * Math.floor(window_width/154) + 'px' );
+	}
+	// イベント登録(メニューボタンのマウスオーバー時の処理)
+	$('.villagers_menubutton').hover(
+		function(){
+			$(this).find('img').fadeIn(200);
+		},
+		function(){
+			$(this).find('img').fadeOut(200,
+				function(){
+					$(this).css('display', 'hidden');
+				}
+			);
+		}
+	);
+});
+</script>
+
+
+		</div>
+
+	</div>
+
+</div>
+
+<footer id="footer">
+	<p>Copyright &copy; つくばフォーク村. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

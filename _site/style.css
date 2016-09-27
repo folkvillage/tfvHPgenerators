@@ -1,0 +1,245 @@
+
+/* 全体に関わる設定 */
+
+html, body {
+	height: 100%;
+	background-color: #8BD0E7;
+	background-image: url(img/back0.jpg);
+	background-repeat: repeat;
+}
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;	/* 思った通りのレイアウトになる */
+	padding: 0;
+	margin: 0;
+	text-align: center;
+}
+
+a {
+	text-decoration: none;
+}
+
+li a {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+h2 {
+	color: #444;
+}
+
+p {
+	color: #444;
+}
+
+hr{
+	margin: 5px 30px;
+	border: 0;
+	height: 0;
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+
+/* default.html */
+
+#wrapper{
+	width: 100%;
+	min-width: 1000px;
+	min-height: 100%;
+	margin: 0 auto -60px;
+}
+
+#contentWrapper {
+	position: absolute;	/* 背景アニメーションのため */
+	z-index: 100;	/* 100未満は背景とする */
+	width: 100%;
+	margin: 0 auto -60px;
+}
+
+#header_wrapper {
+	width: 100%;
+	height: 100px;
+}
+#header {
+	position: fixed;
+	z-index: 2000;
+/*	top: -25px;*/
+	width: 100%;
+/*	height: 114px;*/
+	height: 100px;
+	padding: 0;
+	background-image: url(img/top_bar_back.png);
+	background-repeat: repeat-x;
+	box-shadow: 0 7px 10px;
+	overflow: hidden;
+}
+
+#top_bar_wrapper {
+	width: 100%;
+	margin: 0 auto;
+}
+
+#top_bar {
+	position: relative;
+	z-index: 200;
+}
+
+#mainmenu {
+	position: absolute;
+	z-index: 110;
+	width: 100%;
+}
+
+#mainmenu img{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+}
+
+#TFV { /* タイトル */
+	position: absolute;
+	left: 10px;
+	top: 30px;
+	width: 300px;
+	height: 45px;
+}
+
+#TFV a {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+#menu_fornew {
+	position: absolute;
+	top: 53px;
+	right: 760px;
+}
+
+#menu {
+	position: absolute;
+	/* right: 10px; */
+	right: 0;
+	top: 30px;
+	width: 670px;
+}
+
+#menulist {
+	list-style: none;
+	max-width: 700px;
+	/*max-width: 100%;*/
+	width: 670px;
+	margin: 0 auto;
+}
+
+#menulist li {
+	float: left;
+	border-radius: 5px;
+	width: 128px;
+	height: 46px;
+	margin: 2px;
+/*	margin-left: 5px;*/
+}
+
+#menulist li:hover {
+/*	background-color: #EEEEEE;
+	background-color: rgba(220, 230, 220, 0.9);*/
+}
+
+.menubutton {
+	position:relative;
+	width: 100%;
+	height: 100%;
+	border-radius: 10px;
+	border: solid 1px #3f3b3a;
+}
+.menubutton:hover {
+	background-color: rgba(255, 255, 255, 0.4);
+}
+#menulist li:last-child .menubutton {
+	border: none;
+	background-color: #0ba29a;
+}
+
+#content {
+	max-width: 1000px;
+	margin: 0 auto;
+	padding-top: 30px;
+	padding-bottom: 100px;
+}
+
+#footer {
+	width: 100%;
+	height: 60px;
+}
+#footer p{
+	padding-top: 10px;
+	color: #ccc;
+}
+
+
+/* 部品 (v_から始まるクラス) */
+
+.v_button {
+	width: 300px;
+	margin: 10px auto;
+	text-align: center;
+	border-radius: 5px;
+	background-color: rgba(0, 162, 154, 1.0);
+}
+.v_button a{
+	display: block;
+	width: 100%;
+	height: 100%;
+	padding: 20px;
+	color: #fff;
+}
+
+
+/****************
+ * スマホ用
+ ****************/
+@media screen and (max-width:979px){
+	#wrapper {
+		min-width: 0;
+	}
+	#header {
+		position: static;
+		height: 100%;
+	}
+	#TFV {
+		position: static;
+		margin: 0 auto;
+	}
+	#TFV img {
+		position: static;
+	}
+	#menu_fornew {
+		position: static;
+		height: 80px;
+		margin: 0 auto;
+	}
+	#menu_fornew_link {
+		display: block;
+		position: relative;
+		height: 80px;
+		width: 80px;
+		margin: 0 auto;
+	}
+	#menu {
+		position: static;
+		margin: 0 auto;
+	}
+	#pagetitle img {
+		width: 95%;
+	}
+}

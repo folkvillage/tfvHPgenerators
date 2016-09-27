@@ -1,0 +1,134 @@
+<%
+	page[:title] = "村民のページ"
+	# メニューの設定
+	page[:villagersMenu] = [
+		{
+			name: "A室枠表",	# imgのaltに指定される
+			href: "a-room.html",	# リンク先
+			img_f: "img/aroom_.png",	# 通常時画像
+			img_h: "img/aroom_r.png",	# マウスオーバー時
+		},
+		{
+			name: "長期休暇A室枠表",
+			href: "longterm-a-room.html",
+			img_f: "img/long_aroom_.png",
+			img_h: "img/long_aroom_r.png",
+		},
+		{
+			name: "エントリーシート",
+			href: "entry/index.html",
+			img_f: "img/entry_.png",
+			img_h: "img/entry_r.png",
+		},
+		{
+			name: "PA・照明要望表",
+			href: "pa-lighting.html",
+			img_f: "img/palight_.png",
+			img_h: "img/palight_r.png",
+		},
+		{
+			name: "写真館",
+			href: "shashinkan/index.rb",
+			img_f: "img/shashin_.png",
+			img_h: "img/shashin_r.png",
+		},
+	]
+%>
+
+<h2>村民のページ</h2>
+
+<div id="villagers_info">
+	<p>ここは、村民のためのページです。</p>
+	<%= page[:loginstate_html] %>
+	<form name="logout" method="post" action="index.rb">
+		<input type="hidden" name="login_id" value="logout">
+		<input type="submit" value="ログアウト">
+	</form>
+	<% if page[:loginstate_admin] %>
+		<form name="edit" method="post" action="edit.rb">
+			<input type="hidden" name="data" value="">
+			<input type="submit" value="page_setting編集" style="width:200px; height:60px; margin: 20px;">
+		</form>
+		<form name="aroom-edit" method="post" action="a-room-edit-raw.rb">
+			<input type="hidden" name="data" value="">
+			<input type="submit" value="A室枠編集" style="width:200px; height:60px; margin: 20px;">
+		</form>
+	<% end %>
+</div>
+
+<nav>
+	<ul id="villagersMenu">
+		<% for vMenu in page[:villagersMenu] %>
+			<li>
+				<a href="<%= vMenu[:href] %>">
+					<div class="villagers_menubutton" style="background-image: url(<%= rootdir + vMenu[:img_h] %>);">
+						<img src="<%= rootdir + vMenu[:img_f] %>" alt="<%= vMenu[:name] %>">
+					</div>
+				</a>
+			</li>
+		<% end %>
+		
+		<div style="clear: both;"></div>
+	</ul>
+</nav>
+
+<div id="villagers_cal">
+	<iframe src="https://www.google.com/calendar/embed?showTitle=1&amp;showTabs=1&amp;showCalendars=0&amp;showTz=0&amp;height=700&amp;wkst=1&amp;src=folkvillagephotostudio%40gmail.com&amp;color=%23AB8B00&amp;ctz=Asia%2FTokyo" style=" border-width:0 " width="900" height="700" frameborder="0" scrolling="no"></iframe>
+</div>
+
+
+<style>
+
+#villagers_info {
+	margin: 20px auto;
+}
+
+#villagersMenu {
+	list-style: none;
+	max-width: 775px;
+	margin: 0 auto;
+	padding-bottom: 10px;
+}
+
+#villagersMenu li {
+	float: left;
+/*	border-radius: 5px; */
+	margin: 2px;
+	width: 150px;
+	height: 150px;
+}
+
+.villagers_menubutton {
+	width: 150px;
+	height: 150px;
+}
+
+.villagers_menubutton img{
+	display: none;
+}
+
+</style>
+
+<script type="text/javascript">
+$(function() {
+	// スマホ用の処理
+	if( switch_smartphone() ){
+		$('#villagers_cal iframe').width('100%');
+		$('#villagers_cal iframe').height(window_width + 'px');
+		$('#villagersMenu').width( 154 * Math.floor(window_width/154) + 'px' );
+	}
+	// イベント登録(メニューボタンのマウスオーバー時の処理)
+	$('.villagers_menubutton').hover(
+		function(){
+			$(this).find('img').fadeIn(200);
+		},
+		function(){
+			$(this).find('img').fadeOut(200,
+				function(){
+					$(this).css('display', 'hidden');
+				}
+			);
+		}
+	);
+});
+</script>
