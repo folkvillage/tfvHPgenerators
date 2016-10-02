@@ -1,309 +1,176 @@
-<!DOCTYPE html>
-<html lang="ja">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja"><!-- InstanceBegin template="/Templates/base.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width">
-	<title>ã¤ãã°ãƒ•ã‚©ãƒ¼ã‚¯æ‘</title>
-	<link rel="shortcut icon" href="img/favicon.png" type="image/png">
-	<link rel="stylesheet" href="style.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script type="text/javascript" src="main.js"></script> 
-</head>
-<body>
-<div id="wrapper">
-	<div id="contentWrapper">
-		<div id="header_wrapper">
-		<div id="header" style="background-image: url(img/back.jpg);">
-			<header>
-			<div id="top_bar_wrapper">
-			<div id="top_bar">
-			<div id="mainmenu">
-				
-				<div id="TFV">
-					<a href="index.html"><img src="img/logo.png" style="width:300px;height:45px;"></a> 
-				</div>
-				<div id="menu">
-					<nav>
-						<ul id="menulist">
-							<li><a href="about.html"><div class="menubutton">
-							<img src="img/about.png" style="width:105px;height:30px;">
-						 </div></a></li>
-							<li><a href="live/index.html"><div class="menubutton">
-							<img src="img/live.png" style="width:105px;height:30px;">
-						 </div></a></li>
-							<li><a href="schedule.html"><div class="menubutton">
-							<img src="img/schedule.png" style="width:105px;height:30px;">
-						 </div></a></li>
-							<li><a href="link.html"><div class="menubutton">
-							<img src="img/link.png" style="width:105px;height:30px;">
-						 </div></a></li>
-							<li><a href="villagers/index.rb"><div class="menubutton">
-							<img src="img/member.png" style="width:105px;height:30px;">
-						 </div></a></li>
-						</ul>
-					</nav>
-				</div>
-			</div>
-				<!-- <img src="img/top_bar.png"> -->
-			</div>
-			</div>
-			</header>
-		</div>
-		</div>
-
-		<div id="content" style="background-image: url(img/back.jpg);">
-
-			
-<div id="top_main_wrapper">
-	<div id="top_main">
-		<div class="top_mainimage">
-			<img src="img/top_main1.jpg">
-		</div>
-		<div id="top_main_pick">
-			<img src="img/pick_logo.png">
-		</div>
-		<div id="top_main_fornew">
-			<a href="for_new.html"><img src="img/for_new.png"></a>
-		</div>
-	</div>
-</div>
-<div id="top_wrapper">
-<!--
-<div id="top_fornew">
-	<a href="for_new.html">
-		<img height="150px" src="img/for_new.jpg">
-	</a>
-</div>
--->
-<div id="top_nextlive_wrap">
-	<!--	<img src="img/back3.jpg">-->
-	<div id="top_nextlive">
-		<img src="img/top_next_live.png">
-		<!-- <img height="423px" src="img/top_nextlive.png"> -->
-		<div id="top_nextlive_content">
-			<p>
-				<span class="top_nextlive_name">
-					<a href="live/2015/0406.html">æ–°æ­“ç¥­</a>
-				</span><br>
-				<span class="top_nextlive_detail">4/6 ï¼ çŸ³ã®åºƒå ´, ï¼ 1E501</span>
-			</p>
-			<p>
-				<span class="top_nextlive_name">
-					<a href="live/2015/0407.html">ãƒŸãƒ¼å¾Œãƒ©ã‚¤ãƒ–</a>
-				</span><br>
-				<span class="top_nextlive_detail">4/7ã€œ5/1 ï¼ Aå®¤</span>
-			</p>
-		</div>
-	</div>
-</div>
-<div id="top_info">
-	<div id="top_news_wrap">
-		<img src="img/news.png">
-		<div id="top_news_main">
-			
-				<div class="top_news_content">
-					<span class="top_news_date">2015/4/6</span>
-					<div class="top_news_detail">
-						<p>ãƒ›ãƒ¼ãƒ ãƒšãƒ¼ã‚¸ã‚’ãƒªãƒ‹ãƒ¥ãƒ¼ã‚¢ãƒ«ã—ã¾ã—ãŸã€‚æ—§ãƒ›ãƒ¼ãƒ ãƒšãƒ¼ã‚¸ã¯<a href="link.html">ãƒªãƒ³ã‚¯</a>ã‹ã‚‰å‚ç…§ã§ãã¾ã™ã€‚</p>
-					</div>
-				</div>
-			
-		</div>
-	</div>
-	<div id="top_twitter_wrap">
-		<img src="img/twitter.png">
-		<div id="top_twitter">
-			<a class="twitter-timeline" href="https://twitter.com/tsukuba_fv" data-widget-id="584283128795009024">@tsukuba_fvã•ã‚“ã®ãƒ„ã‚¤ãƒ¼ãƒˆ</a>
-			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-		</div>
-	</div>
-</div>
-</div>
-
-<div id="top_wrap_spacer"></div>
-
-<style>
-#top_wrapper {
-/*	position: relative;
-	width: 1275px;
-	left: -130px;*/
-	width: 1000px;
-}
-#top_wrap_spacer {
-/*	height: 20px;*/
-}
-#top_main_wrapper {
-	position: relative;
-/*	left: -130px;
-	width: 1275px;
-	height: 828px;*/
-	width: 1000px;
-	height: 563px;
-}
-
-#top_main {
-	position: relative;
-	z-index: 300;
-/*	top: -30px;
-	width: 1275px;
-	height: 848px;*/
-	width: 1000px;
-	height: 563px;
-	box-shadow: -2px 5px 10px 7px;
-}
-
-#top_main_pick img {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	margin: auto;
-}
-
-#top_main_fornew img {
-	position: absolute;
-	top: 10px;
-	left: 20px;
-}
-
-#top_fornew {
-	background-image: url(img/top_back2.png);
-}
-
-#top_nextlive_wrap {
-	position: relative;
-	width: 1000px;
-	height: 335px;
-	background-image: url(img/back3.jpg);
-}
-#top_nextlive {
-	position: absolute;
-	z-index: 100;
-	top: 0;
-	left: 0;
-	width: 1000px;
-	height: 335px;
-}
-
-#top_nextlive_content {
-	position: absolute;
-	z-index: 200;
-	top: 60px;
-	left: 650px;
-	width: 300px;
-	height: 250px;
-}
-
-.top_nextlive_name {
-	display: block;
-	margin-top: 30px;
-	font-size: 30px;
-}
-.top_nextlive_name a{
-	color: #fda;
-}
-
-.top_nextlive_detail {
-	display: block;
-	font-size: 20px;
-	color: #fff;
-}
-
-#top_info {
-/*	display: flex;
-	display: -webkit-flex;
-	flex-wrap: wrap;*/
-	width: 1000px;
-	height: 850px;
-/*	background-image: url(img/back6.jpg);*/
-}
-
-#top_news_wrap {
-	float: left;
-	width: 600px;
-	height: 100%;
-/*	background-image: url(img/back5.jpg);*/
-}
-
-#top_news_main {
-	width: 450px;
-	min-height: 500px;
-	height: 600px;
-	margin: 20px auto;
-	padding: 10px;
-	border-radius: 5px;
-	border: solid 2px #323434;
-}
-
-#top_news_main p {
-	color: #222;
-}
-
-.top_news_content {
-	display: flex;
-	display: -moz-box;
-	display: -ms-flexbox;
-	display: -webkit-box;
-	display: -webkit-flex;
-	width: 400px;
-	margin: 20px auto;
-}
-
-.top_news_date {
-	display: block;
-	width: 100px;
-}
-
-.top_news_detail {
-	display: block;
-	width: 300px;
-}
-
-.top_news_detail p{
-	text-align: left;
-}
-
-#top_twitter_wrap {
-	float: left;
-	width: 400px;
-	height: 100%;
-/*	background-image: url(img/back6.jpg);*/
-}
-
-#top_twitter {
-	width: 350px;
-	margin: 30px auto;
-}
-
-#content {
-	padding: 0;
-}
-
-</style>
-
-<script>
-var bgc=0;
-top_main_image = 0;
-$(function(){
-	// ãƒ¡ã‚¤ãƒ³ç”»åƒã®ã‚¹ãƒ©ã‚¤ãƒ‰ã‚·ãƒ§ãƒ¼
-//	setInterval(function(){
-//		$('.top_main_image[]')
-//	},1000);
-});
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>‚Â‚­‚ÎƒtƒH[ƒN‘º - ’}”g‘åŠwŒy‰¹ŠyƒT[ƒNƒ‹</title>
+<meta name="keywords" content="ƒtƒH[ƒN‘º,’}”g‘åŠw,ƒT[ƒNƒ‹,’e‚«Œê‚è,ƒAƒRƒM,ƒoƒ“ƒh,Œy‰¹" />
+<meta name="description" content="’}”g‘åŠwŒy‰¹ŠyƒT[ƒNƒ‹u‚Â‚­‚ÎƒtƒH[ƒN‘ºvB‚±‚ÌƒT[ƒNƒ‹‚Å‚Í’e‚«Œê‚èEƒoƒ“ƒh‹¤‚ÉŠˆ“®‚µ‚Ä‚¢‚Ü‚·B‚½‚¾‰¹Šy‚ğŠy‚µ‚İ‚½‚¢cAƒtƒH[ƒN‘º‚Í‚»‚ñ‚ÈŠw¶‚ÌW‚¤êŠ‚Å‚·B" />
+<!-- InstanceEndEditable -->
+<link href="css/main.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" type="image/x-icon" href="img/folk.ico" />
+<!-- InstanceBeginEditable name="head" -->
+<link href="css/top.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript">
+var hiki_img = new Array(3);
+hiki_img[0] = '<img src=img/hiki1.png width=398 height=319 alt=’e‚«Œê‚èÊ^ />';
+hiki_img[1] = '<img src=img/hiki2.png width=398 height=319 alt=’e‚«Œê‚èÊ^ />';
+hiki_img[2] = '<img src=img/hiki3.png width=398 height=319 alt=’e‚«Œê‚èÊ^ />';
+var band_img = new Array(3);
+band_img[0] = '<img src=img/band1.png width=564 height=383 alt=ƒoƒ“ƒhÊ^ />';
+band_img[1] = '<img src=img/band2.png width=564 height=383 alt=ƒoƒ“ƒhÊ^ />';
+band_img[2] = '<img src=img/band3.png width=564 height=383 alt=ƒoƒ“ƒhÊ^ />';
+//-->
 </script>
+<!-- InstanceEndEditable -->
+</head>
+
+<body>
+<div id="container">
+<div id="header">
+  <h1><img src="img/guiter.png" alt="‚Â‚­‚ÎƒtƒH[ƒN‘º" width="624" height="207" border="0" usemap="#Map" /><a href="index.htm" target="_self">
+    <map name="Map" id="Map">
+      <area shape="rect" coords="345,53,590,146" href="index.htm" target="_self" />
+    </map>
+  </a></h1>
+  <div id="navbar">
+    <ul id="nav">
+      <li id="about"><a href="about.htm" title="ƒtƒH[ƒN‘º‚ÌĞ‰î" target="_self">‘º‚É‚Â‚¢‚Ä</a></li>
+      <li id="schedule"><a href="schedule.htm" title="Šˆ“®—\’èƒJƒŒƒ“ƒ_[" target="_self">‘º‚Ì—\’è•\</a></li>
+      <li id="live"><a href="live/index.htm" title="ƒ‰ƒCƒu‚Ìƒ^ƒCƒ€ƒe[ƒuƒ‹“™‚Ìî•ñ" target="_self">‘º‚Ìƒ‰ƒCƒu</a></li>
+      <li id="sonmin-yougo"><a href="sonmin-yougo/now.htm" title="‘º–¯‚ÌA‘º–¯‚É‚æ‚éA‘º–¯‚Ì‚½‚ß‚ÌŒ¾—t" target="_self">‘º–¯—pŒêW</a></li>
+      <li id="blog"><a href="http://tsukuba-fv.jugem.jp/" title="‘º–¯‚É‚æ‚éƒuƒƒO" target="_blan">‘º‚ÌƒuƒƒO</a></li>
+      <li id="a-room"><a href="a-room.htm" title="‚`º—ûKŠÔŠ„•\" target="_self">‚`º˜g•\</a></li>
+      <li><a href="hikigatariban/" title="‘º–¯‚É‚æ‚éG’k•’mƒXƒy[ƒX" target="_blank">’e‚«Œê‚è”Â</a></li>
+      <li><a href="shashinkan/pipipiga.php" title="‹L˜^ŒW‚É‚æ‚éÊ^WiƒpƒXƒ[ƒh”FØj" target="_blank">‘º‚ÌÊ^ŠÙ</a></li>
+      <li id="link"><a href="link.htm" title="‘¼ƒT[ƒNƒ‹AƒXƒ^ƒWƒIAŠyŠí“X“™ƒTƒCƒg‚Ö‚ÌƒŠƒ“ƒNW
+  OBƒ[ƒŠƒX“o˜^‚à‚±‚¿‚ç" target="_self">‘º‚ÌƒŠƒ“ƒN</a></li>
+      <li id="link"><a href="https://twitter.com/tsukuba_fv" title="ƒtƒH[ƒN‘ºŒö®ƒcƒCƒbƒ^[‚Í‚±‚¿‚ç" target="_blank">Twitter</a></li>
+    </ul>
+  </div>
+</div>
+<div id="title"><!-- InstanceBeginEditable name="title" -->
+<!-- InstanceEndEditable --></div>
+<div id="contents"><!-- InstanceBeginEditable name="contents" -->
+  <div id="top-board">
+    <div id="hiki-image">
+      <script language="JavaScript">
+	  <!--//
+	  var num1 = Math.floor(Math.random()*3);
+	  document.write(hiki_img[num1]);
+	  //-->
+	  </script>
+    </div>
+    <div id="band-image">
+      <script language="JavaScript">
+	  <!--//
+	  var num2 = Math.floor(Math.random()*3);
+	  document.write(band_img[num2]);
+	  //-->
+	  </script>
+    </div>
+
+    <div id="next_live"> 
+
+      <h3>| NEXT LIVE |</h3>
+      <p class="red"></p>
+      <p class="red"></p>
+      <p class="red"><em>@@ </em>’Ç‚¢ƒRƒ“<br />”M’†¥<br /></p>
+
+    </div>
+
+    <div id="rireki">
+
+      <h3>| ‚¨’m‚ç‚¹ |</h3>
+    <p><span class="red">‘º‚ÌƒCƒxƒ“ƒgî•ñ‚ÍŒö®Twitter‚Å‚à‚¨’m‚ç‚¹‚µ‚Ä‚¢‚Ü‚·B</span></p>
+
+<!--
+<p><a href="for_new">V“ü¶‚Ì‚İ‚È‚³‚ñ‚Ö</a></p>
+-->
+
+<!--
+    <p><a href="hikigatariban/" target="_blank"><span class="red">Œ»İ’e‚«Œê‚è”Â‚É‚ÄA‚Â‚­‚Îü•Ó‚Ìî•ñ‚ğ‘º–¯ŠÔ‚Å‹¤—L‚µ‚Ä‚¢‚Ü‚·B</span></a><br />
+    ªTwitterî•ñ‚àŒfÚ‚µ‚Ä‚¢‚Ü‚·B</p>
+-->
+<!--
+    <p><span class="red">Œg‘Ñ”ÅƒTƒCƒg‚É‘ºŒö®Twitter‚Ö‚ÌƒŠƒ“ƒN‚ğ’Ç‰Á‚µ‚Ü‚µ‚½B</span></p>
+-->    
+	<p><span class="red">PA•\‚Í‚±‚¿‚ç¨<a href="PA_print.pdf" target="_blank">ƒoƒ“ƒh</a>
+        E<a href="PA_hiki.pdf" target="_blank">’e‚«Œê‚è</a></span></p>
+        	<span class="red">Æ–¾—v–]•\‚Í‚±‚¿‚ç¨<a href="shomei.pdf" target="_blank">Æ–¾—v–]•\</a>
+<!--	
+<p><span class="red">‘º–¯–¼•ë‚Í‚±‚¿‚ç¨<a href="	sonminmeibo.pdf" target="_blank">‘º–¯–¼•ë</a>
+-->   
+<!--<p>
+   <a href="godo-pa.pdf" target="_blank">‡“¯PA—v–]•\</a>E
+    <a href="godo-pa-ex.pdf" target="_blank">‡“¯PA—v–]•\i‹L“ü—áj</a>E
+    <a href="godo-mtr.pdf" target="_blank">‡“¯MTR—v–]•\</a></p>
+    
+      <p><span class="red">‰Ä‹x‚İ‚`º˜g•\</span><br />
+      
+E<a href="a-room_summer8.htm">8Œ</a><br />
+-->
+<!--
+      E<a href="a-room_summer9.pdf">9Œ</a><br /></p>
+-->
+<!--
+<p><span class="red">“~‹x‚İAº˜g•\‚Í<a href="a-room_winter.htm">‚±‚¿‚ç</a></p>-->
+
+<!--
+<p><span class="red">t‹x‚İAº˜g•\‚Í‚±‚¿‚ç<br />
+<a href="a-room_spring2.pdf"target="_blank">2Œ</a><br />
+<a href="a-room_spring3.pdf"target="_blank">3Œ</a><br />
+</p>
+<p><span class="red">t‹x‚İAº˜g•\‚Í‚±‚¿‚ç<br />
+<a href="a-room_spring4.pdf"target="_blank">3Œ</a><br />-->
 
 
+      <h3>| XV—š—ğ |</h3>
+      <p>ƒ‰ƒCƒu‚ÌƒXƒPƒWƒ…[ƒ‹‚ğXV‚µ‚Ü‚µ‚½B<br/>
+      </p>
 
-		</div>
+      <p id="last_update">Last Update 11/11</p>
 
-	</div>
+    </div>
+
+  </div>
+
+  <div id="top_under">
+
+    <p>‚±‚¿‚ç‚ÍA’}”g‘åŠwŒy‰¹ŠyƒT[ƒNƒ‹u‚Â‚­‚ÎƒtƒH[ƒN‘ºv‚ÌŒö®ƒz[ƒ€ƒy[ƒW‚Å‚·B<br />
+
+      ‰‚ß‚Ä‚Ì•û‚ÍA‚Ü‚¸ [‘º‚É‚Â‚¢‚Ä] ‚©‚ç‚Ç‚¤‚¼B</p>
+
+   <!-- <p class="border"><img src="img/fvmobile.jpg" width="65" height="65" border="0" alt="‚±‚¿‚ç‚Ìƒo[ƒR[ƒh‚ğŒg‘Ñ‚Å“Ç‚İ‚İ‚Ü‚·‚ÆŒg‘Ñ”Åƒz[ƒ€ƒy[ƒW‚ÌURL‚ª•\¦‚³‚ê‚Ü‚·"><br />
+    
+   	Œg‘Ñ”Åƒz[ƒ€ƒy[ƒWƒAƒhƒŒƒX@<a href="mobile/" target="_blank">http://www.stb.tsukuba.ac.jp/~fmura/mobile/</a><br />
+    
+    <span class="small">(ã‚ÌQRƒR[ƒh‚ğŒg‘Ñ“d˜b‚Å“Ç‚İæ‚Á‚Ä‚¢‚½‚¾‚­‚ÆŠÈ’P‚ÉƒAƒNƒZƒX‚Å‚«‚Ü‚·)</span><br />-->
+
+    ƒtƒH[ƒN‘ºƒ[ƒ‹ƒAƒhƒŒƒX@<a href="mailto:fmura@www.stb.tsukuba.ac.jp">fmura@www.stb.tsukuba.ac.jp</a></p>
+
+  </div>
+<!-- InstanceEndEditable -->
+</div>
+
+<div id="top_under">
+
+<!--<p align="center"><a href="http://www.stb.tsukuba.ac.jp/~shinkan/" target="_blank"><img src="http://www.stb.tsukuba.ac.jp/~shinkan/banner2013.png" width="469" height="77" border="0" alt="2012”N“x’}”g‘åŠwV“ü¶Š½Œ}Õ">
+</a></p>-->
 
 </div>
 
-<footer id="footer">
-	<p>Copyright &copy; ã¤ãã°ãƒ•ã‚©ãƒ¼ã‚¯æ‘. All rights reserved.</p>
-</footer>
+
+<div id="footer"> Copyright &copy; ‚Â‚­‚ÎƒtƒH[ƒN‘º. All rights reserved. </div>
+
+</div>
+
+<!-- InstanceBeginEditable name="script" -->
+
+<!-- InstanceEndEditable -->
 
 </body>
-</html>
+
+<!-- InstanceEnd --></html>
