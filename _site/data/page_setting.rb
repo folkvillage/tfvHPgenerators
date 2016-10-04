@@ -8,14 +8,15 @@
 
 	# トップページの設定
 	nextlive: {
-		nextlive_name:   "フェス",
-		nextlive_href:   "#{rootdir}live/2016/1001.html",
-		nextlive_detail: "10/1,2",
-		nextlive2_name:   "the live",
-		nextlive2_href:   "",
-		nextlive2_detail: "10/8,9,10",
+		nextlive_name:   "the live",
+		nextlive_href:   "",
+		nextlive_detail: "10/8,9,10",
+		nextlive2_name:   "学園祭ライブ",
+		nextlive2_href:   "#{rootdir}live/2016/1104.html",
+		nextlive2_detail: "11/4,5,6",
 	},
 	news: [
+               { date: "2016/10/4", detatil:"11月4日,5日,6日開催の<a href=\"#{rootdir}live/2016/1104.html\">学園祭ライブ</a>の情報を更新しました。" },
                { date: "2016/9/25", detatil:"10月1日,2日開催の<a href=\"#{rootdir}live/2016/1001.html\">フェス</a>の情報を更新しました。" },
                { date: "2016/9/25", detatil:"8月26日,27日開催の<a href=\"#{rootdir}live/2016/report/0826.html\">サマフェスライブレポート</a>の情報を更新しました。" },
                { date: "2016/8/25", detatil:"9月10日,11日開催の<a href=\"#{rootdir}live/2016/0910.html\">村TOJO合同ライブ</a>の情報を更新しました。" },
