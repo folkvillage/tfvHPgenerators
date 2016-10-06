@@ -8,8 +8,8 @@
 
 	# トップページの設定
 	nextlive: {
-		nextlive_name:   "the live",
-		nextlive_href:   "",
+		nextlive_name:   "the live <small>@1E203</small>",
+		nextlive_href:   "#{rootdir}live/2016/thelivetime.pdf",
 		nextlive_detail: "10/8,9,10",
 		nextlive2_name:   "学園祭ライブ",
 		nextlive2_href:   "#{rootdir}live/2016/1104.html",
@@ -47,9 +47,9 @@
 
 	# A室枠表の設定
 	aroom: [
-		{ CSV: "data/a-room/2016_0930.csv" },
-		{ CSV: "data/a-room/2016_1001.csv" },
-		{ CSV: "data/a-room/2016_1004.csv" },
+		{ CSV: "data/a-room/2016_1007.csv" },
+		{ CSV: "data/a-room/2016_1008.csv" },
+		{ CSV: "data/a-room/2016_1011.csv" },
 	],
 	aroom_comment: "7限:18-19.5   8限:19.5-21   9限:21-22 です。<br>火曜日は12:15分から村の枠なので注意！",
 
