@@ -11,11 +11,12 @@
 		nextlive_name:   "学園祭ライブ",
 		nextlive_href:   "#{rootdir}live/2016/1104.html",
 		nextlive_detail: "11/4,5,6",
-		nextlive2_name:   "",
-		nextlive2_href:   "",
-		nextlive2_detail: "",
+		nextlive2_name:   "代替わりライブ",
+		nextlive2_href:   "#{rootdir}live/2016/1118.html",
+		nextlive2_detail: "11/18,19,20",
 	},
 	news: [
+               { date: "2016/10/4", detatil:"11月18日,19日,20日開催の<a href=\"#{rootdir}live/2016/1118.html\">代替わりライブ</a>の情報を更新しました。" },
                { date: "2016/10/14", detatil:"10月1日,2日開催の<a href=\"#{rootdir}live/2016/report/1001.html\">フェスライブレポート</a>の情報を更新しました。" },
                { date: "2016/10/4", detatil:"11月4日,5日,6日開催の<a href=\"#{rootdir}live/2016/1104.html\">学園祭ライブ</a>の情報を更新しました。" },
                { date: "2016/9/25", detatil:"10月1日,2日開催の<a href=\"#{rootdir}live/2016/1001.html\">フェス</a>の情報を更新しました。" },
@@ -48,9 +49,9 @@
 
 	# A室枠表の設定
 	aroom: [
-		{ CSV: "data/a-room/2016_1021.csv" },
-		{ CSV: "data/a-room/2016_1022.csv" },
-		{ CSV: "data/a-room/2016_1025.csv" },
+		{ CSV: "data/a-room/2016_1028.csv" },
+		{ CSV: "data/a-room/2016_1029.csv" },
+		{ CSV: "data/a-room/2016_1101.csv" },
 	],
 	aroom_comment: "7限:18-19.5   8限:19.5-21   9限:21-22 です。<br>火曜日は12:15分から村の枠なので注意！",
 
